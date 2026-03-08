@@ -180,6 +180,7 @@
   \newtheorem*{corollary}{推论} %
   \theoremstyle{definition} %
   \newtheorem{definition}{定义}[section] %
+  \newtheorem{law}{定律}[section] %
   \newtheorem{mechanism}{机理}[section] %
   \newtheorem{conjecture}{猜想}[section] %
   \newtheorem{example}{例}[section] %
@@ -208,6 +209,7 @@
   \newtheorem*{corollary}{Corollary} %
   \theoremstyle{definition} %
   \newtheorem{definition}{Definition}[section] %
+  \newtheorem{law}{Law}[section] %
   \newtheorem{mechanism}{Mechanism}[section] %
   \newtheorem{conjecture}{Conjecture}[section] %
   \newtheorem{example}{Example}[section] %

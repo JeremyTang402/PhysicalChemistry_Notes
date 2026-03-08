@@ -15,62 +15,143 @@
     \end{enumerate}
     \item 原电池：化学能转化为电能的装置，自发化学反应引起电子流动。 \\ 电解池：电能转化为化学能的装置，电能驱动电极上的化学反应。生产上的应用：熔盐电解，如稀土、\ce{Ti}、\ce{Al}、有色金属。 
     \item 在原电池中，阴极是正极，阳极是负极；在电解池中，阴极是负极，阳极是正极。
-    \item 电极上的反应，与电解质的种类、溶剂的性质、电极材料、外加电源的电压（电子能级，填充到离子空轨道）、离子浓度及温度等有关，类似于窗口效应：反应物快速到达表面，生成物快速离开表面。
+    \item 电极上的反应，与电解质的种类、溶剂的性质、电极材料、外加电源的电压（电子能级，填充到离子空轨道）、离子浓度及温度等有关。类似于窗口效应：反应物快速到达表面，生成物快速离开表面。
     \item Daniell 电池：\ce{Zn(s)} | \ce{ZnSO4(aq)} || \ce{CuSO4(aq)} | \ce{Cu(s)} \\ \ce{Zn} 极产生自由电子，外电路促使电子流动，\ce{Cu^{2+}} 消耗电子。
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.3\textwidth]{8.1Daniell 电池.png}
+        \includegraphics[width=0.3\textwidth]{8.1_Daniell电池.png}
         \caption{Daniell 电池示意图}
-        \label{8.1Daniell 电池}
+        \label{8.1_Daniell电池}
     \end{figure}
-    \item $ t_{\text{阳}} + t_{\text{阴}} = 1 $，$ t_{\text{阳}} $ 和 $ t_{\text{阴}} $ 分别是阳离子和阴离子对电流的贡献率，称为迁移数。
-    \item 电子回路：外电路-电极-电解液，外电路电子移动 + 溶液中阴阳离子定向移动
-    \item 电极作用：提供阴阳离子的是电子的场所。汞电极，惰性电极（\ce{Pt}、\ce{Au}、\ce{C}、\ce{Mo}有电化学惰性）等。
+    \item $ t_+ + t_- = 1 $，$ t_+ $ 和 $ t_- $ 分别是正离子和负离子对电流的贡献率，称为迁移数。
+    \item 电子回路：外电路-电极-电解液，外电路电子移动 $ + $ 溶液中阴阳离子定向移动
+    \item 电极的作用：提供阴阳离子的是电子的场所。汞电极，惰性电极（\ce{Pt}、\ce{Au}、\ce{C}、\ce{Mo}有电化学惰性）等。
 \end{enumerate}
 
 \subsubsection{Faraday 电解定律}
 
-\begin{enumerate}
-    \item Faraday 电解定律 (Faraday's law of electrolysis)：通电于电解质溶液之后，% 可考虑新建 Law 环境
+\begin{law} 
+    Faraday 电解定律 (Faraday's law of electrolysis)：通电于电解质溶液之后，
     \begin{enumerate}
         \item 在电极上（两相界面上）物质发生化学变化的物质的量与通入的电荷量成正比;
         \item 若将几个电解池串联，通入一定的电荷量后，在各个电解池的电极上发生化学变化的物质的量都相等。
     \end{enumerate}
-    \begin{note}
-        通入 \qty{1}{\mole} 电子，电极上各发生 \qty{1}{\mole} 化学反应，溶液中阴阳离子总共承担 \qty{1}{\mole} 电荷迁移。
-    \end{note}
-    \item Faraday 常数：数值上等于 \qty{1}{\mole} 元电荷的电量。 \\ 元电荷电量 $ e = \qty{1.6022E-19}{\coulomb} $， \\ Faraday 常数 $ F = e N_{A} = \qty{1.6022E-19}{\coulomb} \times \qty{6.022E23}{\per\mole} = \qty{96484.6}{\coulomb\per\mole} $
-    \item 电流效率/Faraday 效率
-    \begin{equation}
-        \eta = \frac{\text{按 Faraday 电解定律计算所需理论电荷量}}{\text{实际所消耗的电荷量}} \times 100\% = \frac{n \cdot F}{I \cdot t} \times 100\%
-    \end{equation}
-    \begin{equation}
-        \eta = \frac{\text{电极上产物的实际质量}}{\text{按 Faraday电解定律计算应获得产物的质量}} \times 100\%
-    \end{equation}
-    \item Faraday 过程：电极上有电子交换的过程。 \\ 非Faraday 过程：电极上没有电子交换的过程，离子迁移到电极，形成电荷双层，相当于电容器，给电极充电。
+\end{law}
+\begin{note}
+    通入 \qty{1}{\mole} 电子，电极上各发生 \qty{1}{\mole} 化学反应，溶液中阴阳离子总共承担 \qty{1}{\mole} 电荷迁移。
+\end{note}
+
+\begin{enumerate}
+    \item Faraday 常数：数值上等于 \qty{1}{\mole} 元电荷的电量, 元电荷电量 $ e = \qty{1.6022E-19}{\coulomb} $。
+    
+    Faraday 常数 $ F = e N_{\text{A}} = \qty{1.6022E-19}{\coulomb} \times \qty{6.022E23}{\per\mole} = \qty{96484.6}{\coulomb\per\mole} $
+
     \item 若在电解池中发生如下反应：
     \ce{M^{z+} + $z_{+}$ e^{-} -> M(s)}
+
+    若反应进度为 $\xi$ ，需通入的电荷量为 $ Q = z_+ F \xi $。
+
+    通入任意电荷量 $ Q $，则沉积出金属 B 的物质的量 $ n_{\text{B}} $ 和质量 $ m_{\text{B}} $ 分别为
+    \begin{equation}
+        n_{\text{B}} = \frac{Q}{z_{+} F} \qquad m_{\text{B}} = n_{\text{B}} M_{\text{B}} = \frac{Q}{z_{+} F}M_{\text{B}}
+    \end{equation}
+
+    \item 在电路中串联一个电解池，根据电解池中在阴极上析出金属的物质的量来计算通入的电荷量，这种装置就称为电量计或库仑计（coulometer）。
+    
+    \item 电流效率/Faraday 效率
+    
+    当析出一定数量的某物质时：
+    \begin{equation*}
+        \eta = \frac{\text{按 Faraday 电解定律计算所需理论电荷量}}{\text{实际所消耗的电荷量}} \times 100\% = \frac{n \cdot F}{I \cdot t} \times 100\%
+    \end{equation*}
+    
+    当通过一定电荷量后：
+    \begin{equation*}
+        \eta = \frac{\text{电极上产物的实际质量}}{\text{按 Faraday 电解定律计算应获得产物的质量}} \times 100\%
+    \end{equation*}
+
+    \item Faraday 过程：电极上有电子交换的过程。
+    
+    非 Faraday 过程：电极上没有电子交换的过程，离子迁移到电极，形成电荷双层，相当于电容器，给电极充电。
+
 \end{enumerate}
 
+\begin{example}
+    用 \qty{0.025}{\ampere}（\qty{1}{\ampere} = \qty{1}{\coulomb\per\second}）的电流通过硝酸金 \ce{[Au(NO3)3]} 溶液，当阴极上有 \qty{1.20}{\gram} 的 \ce{Au(s)} 析出时，试计算
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item 通过的电荷量。
+        \item 需通电的时间。
+        \item 阳极上放出氧气的质量。
+    \end{enumerate}
+
+    已知 \ce{Au(s)} 的摩尔质量 $ M(\ce{Au}) $ 为 \qty{197.0}{\gram\per\mol}， \ce{O2(g)} 的摩尔质量 $ M(\ce{O2}) $ 为 \qty{32.0}{\gram\per\mol}。
+
+    {\heiti 解：} 
+    待完成
+\end{example}
+%----------%
 \subsection{离子的电迁移率和迁移数 20260304}
 
 \subsubsection{离子的电迁移现象}
 
 \begin{enumerate}
-    \item 离子迁移：在电场作用下，离子发生定向运动的现象； \\ 离子扩散：在浓度梯度作用下，离子发生无规则运动的现象。
-    \item 离子本性决定离子迁移速度：离子电荷数越大，离子半径越小，水化作用越弱，迁移速度越快。
-    \item 设想在两个惰性电极之间有想象的平面AA和BB，将溶液分为阳极部、中部及阴极部三个部分。假定未通电前，各部均含有正、负离子各 \qty{5}{\mole} ，分别用 +、- 号代替。设离子都是一价的，当通入 \qty{4}{\mole} 电子的电量时，阳极上有 \qty{4}{\mole} 负离子氧化，阴极上有 \qty{4}{\mole} 正离子还原。   两电极间正、负离子要共同承担 \qty{4}{\mole} 电子电量的运输任务。现在离子都是一价的，则离子运输电荷的数量只取决于离子迁移的速度。     
+    \item 离子迁移：离子在外电场作用下发生定向运动的现象；
+    
+    离子扩散：离子在浓度梯度作用下发生无规则运动的现象。
+    \item 当通电于电解质溶液后，溶液中正、负离子分别向两极移动，并在电极界面上发生氧化还原作用，从而两极旁溶液的浓度也发生变化。
+    \item 离子本性决定离子迁移速度：离子电荷数越大、半径越小、水化作用越弱等，迁移速度越快；溶剂性质也会影响离子迁移速度：粘度等。
+    \item 设想在两个惰性电极之间的溶液中，有想象的平面 $ AA' $ 和 $ BB' $，将溶液分为阳极部、中部及阴极部三个部分。假定未通电前，各部均含有都为一价的正、负离子各 \qty{5}{\mole} ，分别用 $ + $、 $ - $ 号代替。设离子都是一价的，当通入 \qty{4}{\mole} 电子的电量时，阳极上有 \qty{4}{\mole} 负离子氧化，阴极上有 \qty{4}{\mole} 正离子还原。两电极间正、负离子要共同承担 \qty{4}{\mole} 电子电量的运输任务。  
+
     \begin{enumerate}
-        \item 正、负离子迁移的速率相等，$ r_{+} = r_{-} $，则导电任务各分担 \qty{2}{\mole} 的导电任务。在假想的AA，BB平面上各有 \qty{2}{\mole} 正、负离子逆向通过。
-        \item 正离子迁移速率是负离子的三倍，$ r_{+} = 3r_{-} $，则正离子分担 \qty{3}{\mole} 的导电任务，负离子分担 \qty{1}{\mole} 的导电任务。在假想的AA，BB平面上分别有 \qty{3}{\mole} 正离子和 \qty{1}{\mole} 负离子逆向通过。
+        \item 正、负离子迁移的速率相等，$ r_{+} = r_{-} $，则各分担 \qty{2}{\mole} 的导电任务。在假想的 $ AA' $ ，$ BB' $ 平面上各有 \qty{2}{\mole} 正、负离子相互逆向通过。
+        
+        通电完毕后，中部溶液的浓度没有变化，而阴极部和阳极部溶液的浓度虽然相同，但与原溶液相比，正、负离子各少了 \qty{2}{\mole} 。
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.6\textwidth]{8.2_离子迁移1.png}
+            \caption{第一种情况}
+            \label{8.2_离子迁移1}
+        \end{figure}
+
+        \item 正离子迁移速率是负离子的三倍，$ r_{+} = 3r_{-} $，则正离子分担 \qty{3}{\mole} 的导电任务，负离子分担 \qty{1}{\mole} 的导电任务。在假想的 $ AA' $ ，$ BB' $ 平面上分别有 \qty{3}{\mole} 正离子和 \qty{1}{\mole} 负离子逆向通过。
+        
+        通电完毕后，中部溶液的浓度仍保持不变，但阴极部和阳极部正、负离子的浓度互不相同。且两极部溶液的浓度比原溶液都有所下降。
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.6\textwidth]{8.2_离子迁移2.png}
+            \caption{第二种情况}
+            \label{8.2_离子迁移2}
+        \end{figure}
     \end{enumerate}
-    \item 离子电迁移的规律：向阴、阳两极迁移的正、负离子物质的量总和恰好等于通入溶液的总电量。
-    \item 离子的电迁移率： \\ 离子在电场中运动的速率：
-    \begin{equation}
-        r_{+} = u_{+} \frac{\mathrm{d}E}{\mathrm{d}l} \qquad r_{-} = u_{-} \frac{\mathrm{d}E}{\mathrm{d}l} %kasd
-    \end{equation}
+
+    \item 离子电迁移的规律：
+    \begin{enumerate}
+        \item 向阴、阳两极迁移的正、负离子所传导的电荷量的总和恰好等于通入溶液的总电量。
+        \item $\displaystyle \frac{\text{阳极部物质的量的减少}}{\text{阴极部物质的量的减少}} = \frac{\text{正离子所传导的电荷量} Q_+}{\text{负离子所传导的电荷量} Q_-} = \frac{\text{阳离子迁移速率} r_+}{\text{阴离子迁移速率} r_-} $
+    \end{enumerate}
 \end{enumerate}
 
+\subsubsection{离子的电迁移率和迁移数}
+
+\begin{enumerate}
+    \item 离子在电场中运动的速率还与电场的电位梯度有关。离子的运动速率可写为：
+    \begin{equation}
+        r_{+} = u_{+} \frac{\mathrm{d}E}{\mathrm{d}l} \qquad r_{-} = u_{-} \frac{\mathrm{d}E}{\mathrm{d}l}
+    \end{equation}
+    式中 $ u_{+} $ 和 $ u_{-} $ 为离子电迁移率/离子淌度，当于单位电位梯度（\qty{1}{\volt\per\meter}）时离子的运动速率，单位为 \si{\meter\squared\per\volt\per\second}，大小与温度、浓度等因素有关。
+    \item 正、负离子移动的速率不同，所带电荷不等，因此它们在迁移电荷时所分担的份额也不同。
+    \begin{definition}
+        把离子 B 所运载的电流与总电流之比称为离子 B 的迁移数（transference number），用符号 $ t_{\text{B}} $ 表示。
+        \begin{equation}
+            t_{\text{B}} \xlongequal{\text{def}} \frac{I_{\text{B}}}{I}
+        \end{equation}
+    \end{definition}
+    \item 对 $ t_+ + t_- = 1 $ 的证明 待完成。
+\end{enumerate}
+%----------%
 \subsubsection{离子迁移数的测定}
 
 \begin{enumerate}
