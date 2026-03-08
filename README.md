@@ -71,8 +71,8 @@ https://github.com/JeremyTang402/PhysicalChemistry_Notes/blob/main/elegantnote-c
 | Folder                    | Description          |
 | ------------------------- | -------------------- |
 | `elegantnote-cn.tex`      | Main LaTeX document  |
-| `Chapter*.tex`               | Chapter source files |
-| `image/`                | Images and diagrams  |
+| `Chapter*.tex`            | Chapter source files |
+| `image/`                  | Images and diagrams  |
 
 ---
 
