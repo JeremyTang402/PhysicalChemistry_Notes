@@ -1,0 +1,104 @@
+% !TeX root = elegantnote-cn.tex
+\section{电解质溶液}
+
+\subsection{电化学中的基本概念和电解定律 20260302 20260304}
+
+\subsubsection{原电池和电解池}
+
+\begin{enumerate}
+    \item 电化学主要是研究电能和化学能之间的相互转化及转化过程中有关规律的科学。
+    \item 电化学的用途：电解、电池、电化学分析、生物电化学。
+    \item 能导电的物质称为导电体，简称导体。
+    \begin{enumerate}
+        \item 第一类导体：电子导体，如金属、石墨及某些金属化合物。 \\ 依靠自由电子作定向移动而导电；导电过程中导体本身不发生变化；温度升高，电阻也升高；导电总量全部由电子承担。
+        \item 第二类导体：离子导体，如电解质溶液、熔融电解质等。 \\ 依靠离子的定向运动（定向迁移）而导电；导电过程中有化学反应发生；温度升高，黏度降低、离子水化作用减弱等，离子运动速率加快，电阻下降；导电总量分别由正、负离子分担。
+    \end{enumerate}
+    \item 原电池：化学能转化为电能的装置，自发化学反应引起电子流动。 \\ 电解池：电能转化为化学能的装置，电能驱动电极上的化学反应。生产上的应用：熔盐电解，如稀土、\ce{Ti}、\ce{Al}、有色金属。 
+    \item 在原电池中，阴极是正极，阳极是负极；在电解池中，阴极是负极，阳极是正极。
+    \item 电极上的反应，与电解质的种类、溶剂的性质、电极材料、外加电源的电压（电子能级，填充到离子空轨道）、离子浓度及温度等有关，类似于窗口效应：反应物快速到达表面，生成物快速离开表面。
+    \item Daniell 电池：\ce{Zn(s)} | \ce{ZnSO4(aq)} || \ce{CuSO4(aq)} | \ce{Cu(s)} \\ \ce{Zn} 极产生自由电子，外电路促使电子流动，\ce{Cu^{2+}} 消耗电子。
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.3\textwidth]{8.1Daniell 电池.png}
+        \caption{Daniell 电池示意图}
+        \label{8.1Daniell 电池}
+    \end{figure}
+    \item $ t_{\text{阳}} + t_{\text{阴}} = 1 $，$ t_{\text{阳}} $ 和 $ t_{\text{阴}} $ 分别是阳离子和阴离子对电流的贡献率，称为迁移数。
+    \item 电子回路：外电路-电极-电解液，外电路电子移动 + 溶液中阴阳离子定向移动
+    \item 电极作用：提供阴阳离子的是电子的场所。汞电极，惰性电极（\ce{Pt}、\ce{Au}、\ce{C}、\ce{Mo}有电化学惰性）等。
+\end{enumerate}
+
+\subsubsection{Faraday 电解定律}
+
+\begin{enumerate}
+    \item Faraday 电解定律 (Faraday's law of electrolysis)：通电于电解质溶液之后，% 可考虑新建 Law 环境
+    \begin{enumerate}
+        \item 在电极上（两相界面上）物质发生化学变化的物质的量与通入的电荷量成正比;
+        \item 若将几个电解池串联，通入一定的电荷量后，在各个电解池的电极上发生化学变化的物质的量都相等。
+    \end{enumerate}
+    \begin{note}
+        通入 \qty{1}{\mole} 电子，电极上各发生 \qty{1}{\mole} 化学反应，溶液中阴阳离子总共承担 \qty{1}{\mole} 电荷迁移。
+    \end{note}
+    \item Faraday 常数：数值上等于 \qty{1}{\mole} 元电荷的电量。 \\ 元电荷电量 $ e = \qty{1.6022E-19}{\coulomb} $， \\ Faraday 常数 $ F = e N_{A} = \qty{1.6022E-19}{\coulomb} \times \qty{6.022E23}{\per\mole} = \qty{96484.6}{\coulomb\per\mole} $
+    \item 电流效率/Faraday 效率
+    \begin{equation}
+        \eta = \frac{\text{按 Faraday 电解定律计算所需理论电荷量}}{\text{实际所消耗的电荷量}} \times 100\% = \frac{n \cdot F}{I \cdot t} \times 100\%
+    \end{equation}
+    \begin{equation}
+        \eta = \frac{\text{电极上产物的实际质量}}{\text{按 Faraday电解定律计算应获得产物的质量}} \times 100\%
+    \end{equation}
+    \item Faraday 过程：电极上有电子交换的过程。 \\ 非Faraday 过程：电极上没有电子交换的过程，离子迁移到电极，形成电荷双层，相当于电容器，给电极充电。
+    \item 若在电解池中发生如下反应：
+    \ce{M^{z+} + $z_{+}$ e^{-} -> M(s)}
+\end{enumerate}
+
+\subsection{离子的电迁移率和迁移数 20260304}
+
+\subsubsection{离子的电迁移现象}
+
+\begin{enumerate}
+    \item 离子迁移：在电场作用下，离子发生定向运动的现象； \\ 离子扩散：在浓度梯度作用下，离子发生无规则运动的现象。
+    \item 离子本性决定离子迁移速度：离子电荷数越大，离子半径越小，水化作用越弱，迁移速度越快。
+    \item 设想在两个惰性电极之间有想象的平面AA和BB，将溶液分为阳极部、中部及阴极部三个部分。假定未通电前，各部均含有正、负离子各 \qty{5}{\mole} ，分别用 +、- 号代替。设离子都是一价的，当通入 \qty{4}{\mole} 电子的电量时，阳极上有 \qty{4}{\mole} 负离子氧化，阴极上有 \qty{4}{\mole} 正离子还原。   两电极间正、负离子要共同承担 \qty{4}{\mole} 电子电量的运输任务。现在离子都是一价的，则离子运输电荷的数量只取决于离子迁移的速度。     
+    \begin{enumerate}
+        \item 正、负离子迁移的速率相等，$ r_{+} = r_{-} $，则导电任务各分担 \qty{2}{\mole} 的导电任务。在假想的AA，BB平面上各有 \qty{2}{\mole} 正、负离子逆向通过。
+        \item 正离子迁移速率是负离子的三倍，$ r_{+} = 3r_{-} $，则正离子分担 \qty{3}{\mole} 的导电任务，负离子分担 \qty{1}{\mole} 的导电任务。在假想的AA，BB平面上分别有 \qty{3}{\mole} 正离子和 \qty{1}{\mole} 负离子逆向通过。
+    \end{enumerate}
+    \item 离子电迁移的规律：向阴、阳两极迁移的正、负离子物质的量总和恰好等于通入溶液的总电量。
+    \item 离子的电迁移率： \\ 离子在电场中运动的速率：
+    \begin{equation}
+        r_{+} = u_{+} \frac{\mathrm{d}E}{\mathrm{d}l} \qquad r_{-} = u_{-} \frac{\mathrm{d}E}{\mathrm{d}l} %kasd
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{离子迁移数的测定}
+
+\begin{enumerate}
+    \item Hittorf 法
+    \begin{enumerate}
+        \item wd
+        \item 银电量计：测量电路中通过的电荷总量。
+        \item 必须采集的数据:
+        \begin{enumerate}
+            \item 通入的电量，由库仑计中称重阴极质量的增加而得；
+            \item 电解前含某离子的物质的量 $ n_{\text{始}} $，电解后含某离子的物质的量 $ n_{\text{终}} $；
+            \item 
+        \end{enumerate}
+    \end{enumerate}
+    \begin{example}
+        在Hittorf 迁移管中，用Cu电极电解已知浓度的溶液。
+
+        \textbf{解：} $ n_{\text{终了}} = n_{\text{起始}} - n_{\text{电解}} + n_{\text{迁移}} $ \\ 
+        $ t_{+} = \frac{n_{\text{迁移}}}{n_{\text{电解}}} $
+    \end{example}
+    \item 界面移动法
+    \begin{enumerate}
+        \item $ t_{}$
+    \end{enumerate}
+    \begin{note}
+        两种离子移动速率应尽可能接近，加入溶液时应缓慢，使形成的界面足够清晰。
+    \end{note}
+扩散层
+\end{enumerate}
+
+\
