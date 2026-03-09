@@ -72,7 +72,7 @@
 
     \item Faraday 过程：电极上有电子交换的过程。
     
-    非 Faraday 过程：电极上没有电子交换的过程，离子迁移到电极，形成电荷双层，相当于电容器，给电极充电。
+    非 Faraday 过程：电极上没有电子交换的过程，离子迁移到电极，形成电荷双层。相当于电容器，给电极充电。此时电流称为充电电流 $ I_{\text{c}} $。
 
 \end{enumerate}
 
@@ -182,4 +182,99 @@
 扩散层
 \end{enumerate}
 
-\
+\subsection{电解质溶液的电导 20260309}
+
+\subsubsection{电导、电导率、摩尔电导率}
+
+\begin{enumerate}
+    \item 电解质导电能力用电导（electric conductance）$ G $ 表示，$ G = \frac{1}{R} $，单位为 \si{\siemens} 或 \si{\per\ohm}。
+    \item 据 Ohm（欧姆）定律，电压、电流和电阻三者之间的关系为
+    \begin{equation}
+        R = \frac{U}{I}
+    \end{equation}
+
+    式中 $ U $ 为外加电压（单位为 V）；$ I $ 为电流强度（单位为 A）。由 $ G = R^{-1} $，可得
+
+    \begin{equation}
+        G = R^{-1} = \frac{I}{U}
+    \end{equation}
+
+    式中 $ \rho $ 是比例系数，称为电阻率 (resistivity),单位是。 电导率 (electric  conductivity) K 是电阻率的倒数，即
+    \begin{equation}
+        k = \frac{1}{\rho} = \frac{L}{S R} = \frac{G L}{S} %k?
+    \end{equation}
+
+    表示：两个电极面积为\qty{1}{\meter\squared}，电极间距为\qty{1}{\meter}，包含\qty{1}{\meter\cubed} 电解质溶液时的电导。
+
+    \item 摩尔电导率 (molar conductivity) $ \Lambda_{\text{m}} $ 把含有 \qty{1}{\mole} 电解质的溶液置于  间距为单位距离的电导池的两个平行电极之间时所具有的电导，单位为 \si{\siemens\meter\squared\per\mole}。
+    \begin{equation}
+        \Lambda_{\text{m}} \xlongequal{\text{def}} k V_\text{m} = \frac{k}{c}
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{电导的测定}
+
+\begin{enumerate}
+    \item 用 Wheatstone 电桥测电导
+    \item 
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.4\textwidth]{8.3_Wheatstone电桥.png}
+        \caption{用 Wheatstone 电桥测电导的装置示意图}
+        \label{8.3_Wheatstone电桥}
+    \end{figure}
+
+    近：用于高电导率测定；远：用于低电导率测定。
+
+    \item 电导池常数：电极间距与电极面积之比，$ K_\text{cell} = \frac{l}{A} $，单位为 \si{\per\meter}。
+    \item 电极之间的距离 $ l $ 和电极的面积 $ A $ 很难测量，通常用已知电导率的标准溶液测定电导，计算电导池常数。
+    \item 无法直接测定摩尔电导率，通常测定电导率后计算摩尔电导率。
+\end{enumerate}
+
+\subsubsection{电导率、摩尔电导率与浓度的关系}
+
+\begin{enumerate}
+    \item 强电解质溶液的电导率随浓度的增大（即导电粒子数的增多）而升高，但当浓度增大到一定程度以后，由于正、负离子之间的相互作用力增大，因而使离子的运动速率降低，电导率反而降低。在电导率与浓度的关系曲线上可能会出现最高点。
+    \item 弱电解质溶液的电导率随浓度的增大而升高，但变化不显著，因为浓度增加使其解离度减小，所以溶液中离子数目变化不大。
+    \item 摩尔电导率随浓度的下降而升高，因为粒子之间的相互作用力减弱，正、负离子的运动速率增大。
+    \item 弱电解质摩尔电导率随浓度的下降而迅速升高，因为解离度增大，溶液中离子数目增多。
+    \item 浓度极稀时（浓度在\qty{0.001}{\mole\per\liter} 以下），强电解质的 $ \Lambda_{\text{m}} $ 与 $ \sqrt{c} $ 几乎成线性关系：
+    \begin{equation}
+        \Lambda_{\text{m}} = \Lambda_{\text{m}}^{\infty} (1 - \beta \sqrt{c})
+    \end{equation}
+    \item 无限稀释：例如氯化银沉淀上清液、人体内金属有机物。
+\end{enumerate}
+
+\subsubsection{离子独立移动定律和离子的摩尔电导率}
+
+\begin{enumerate}
+    \item Kohlrausch 离子独立移动定律：在无限稀释的溶液中，每一种离子都是独立移动的，不受其他离子的影响。电解质的无限稀释摩尔电导率可认为是两种离子无限稀释摩尔电导率之和。
+    \begin{equation}
+        \Lambda_{\text{m}}^{\infty} = \Lambda_{\text{m},+}^{\infty} + \Lambda_{\text{m},-}^{\infty}
+    \end{equation}
+    对于不同的电解质，
+    \item 弱电解质在无限稀释时的摩尔电导率 $ \Lambda_{\text{m}}^{\infty} $ 可从强电解质的 $ \Lambda_{\text{m}}^{\infty} $ 求算，或从离子的无限稀释时的摩尔电导率求得。
+    \begin{equation*}
+        \begin{aligned}
+            \Lambda_{\text{m}}^{\infty}(\ce{HAc}) &= \Lambda_{\text{m}}^{\infty}(\ce{H+}) + \Lambda_{\text{m}}^{\infty}(\ce{Ac-}) \\ 
+            &= [\Lambda_{\text{m}}^{\infty}(\ce{H+}) + \Lambda_{\text{m}}^{\infty}(\ce{Ac-})] + [\Lambda_{\text{m}}^{\infty}(\ce{Na+}) + \Lambda_{\text{m}}^{\infty}(\ce{Cl-})] - \\
+            &\quad [\Lambda_{\text{m}}^{\infty}(\ce{Na+}) + \Lambda_{\text{m}}^{\infty}(\ce{Cl-})] \\
+            &= \Lambda_{\text{m}}^{\infty}(\ce{HCl}) + \Lambda_{\text{m}}^{\infty}(\ce{NaAc}) - \Lambda_{\text{m}}^{\infty}(\ce{NaCl})
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\subsubsection{电导测定的一些应用}
+
+\begin{enumerate}
+    \item 检验水的纯度
+    \item 计算弱电解质的解离度和解离常数
+    \begin{equation}
+        K = \frac{\alpha^2 c}{1 - \alpha} \label{OstwaldsDilutionLaw}
+    \end{equation}
+    \begin{law}
+        Ostwald 稀释定律（Ostwald's dilution law）：参考 (\ref{OstwaldsDilutionLaw})
+    \end{law}
+    \item 测定难溶盐的溶解度
+
+\end{enumerate}
