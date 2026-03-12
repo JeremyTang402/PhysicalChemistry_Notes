@@ -319,7 +319,7 @@
   \definecolor{ecolor}{RGB}{0,120,2}%
 }{\relax}
 \ifdefstring{\ELEGANT@color}{cyan}{
-  \definecolor{ecolor}{RGB}{31,186,190}%
+  \definecolor{ecolor}{RGB}{16,100,112}%
 }{\relax}
 \ifdefstring{\ELEGANT@color}{blue}{
   \definecolor{ecolor}{RGB}{1,126,218}%
