@@ -37,6 +37,7 @@
         \item 若将几个电解池串联，通入一定的电荷量后，在各个电解池的电极上发生化学变化的物质的量都相等。
     \end{enumerate}
 \end{law}
+
 \begin{note}
     通入 \qty{1}{\mole} 电子，电极上各发生 \qty{1}{\mole} 化学反应，溶液中阴阳离子总共承担 \qty{1}{\mole} 电荷迁移。
 \end{note}
@@ -44,7 +45,7 @@
 \begin{enumerate}
     \item Faraday 常数：数值上等于 \qty{1}{\mole} 元电荷的电量， 元电荷电量 $ e = \qty{1.6022E-19}{\coulomb} $。
     
-    Faraday 常数 $ F = e N_{\text{A}} = \qty{1.6022E-19}{\coulomb} \times \qty{6.022E23}{\per\mole} = \qty{96484.6}{\coulomb\per\mole} $
+    Faraday 常数 $ F = Le = \qty{6.022E23}{\per\mole} \times \qty{1.6022E-19}{\coulomb} = \qty{96484.6}{\coulomb\per\mole} $
 
     \item 若在电解池中发生如下反应：
     \ce{M^{z+} + $z_{+}$ e^{-} -> M(s)}
@@ -196,7 +197,7 @@
 	    $ \displaystyle \frac{1}{2} $ \ce{Cu^2+} + \ce{e^-}
         \arrow{->}
         $ \displaystyle \frac{1}{2} $ \ce{Cu(s)}
-    \schemestop
+        \schemestop
     \end{equation*}
     $ \displaystyle \frac{1}{2} $ \ce{Cu(s)} 在阴极部的物质的量的变化为
     \begin{equation*}
@@ -227,19 +228,45 @@
 
     若选取 \ce{Cu^2+} 为基本离子，计算方法基本相同，只是库仑计中对应的两个银的摩尔质量为 $ M(2\ce{Ag}) = \qty{107.88}{\gram\per\mol} \times 2 $。
 \end{example}
-%----------%
-\begin{enumerate}[resume]
 
+\begin{enumerate}[resume]
     \item 界面移动法
     \begin{enumerate}
-        \item $ t_{}$
+        \item 此方法能测得较为精确的迁移数，用以直接测定溶液中离子的移动速率（或淌度）。
+        
+        \item 使用的两种  电解质溶液含有一种共同的离子，它们被小心地放在一个垂直的细智内，利用溶液密度的不同，使这两种溶液之间形成一个明显的界面。
+        
+        \item 如图 \ref{8.2_界面移动法测电迁移数} 所示，在管中先放 \ce{CdCl2} 溶液，然后再小心放入 \ce{HCl} 溶液，形成 $ bb' $ 界面。在通电过程中， \ce{Cd} 从阳极上溶解下来，\ce{H2(g)} 从阴极上放出，溶液中 \ce{H+} 向上移动， $ bb' $ 界面也上移。由于 \ce{Cd^2+} 的移动速率比 \ce{H+} 的小， \ce{Cd^2+} 跟在 \ce{H+} 之后向上移动，所以不会产生新的界面。根据管子的横截面积、在通电的时间内界面移动的距离及通过该电解池的电荷量就可计算出离子的迁移数。
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.3\textwidth]{8.2_界面移动法测电迁移数.png}
+            \caption{界面移动法测定迁移数的实验装置示意图}
+            \label{8.2_界面移动法测电迁移数}
+        \end{figure}
     \end{enumerate}
+    
     \begin{note}
         两种离子移动速率应尽可能接近，加入溶液时应缓慢，使形成的界面足够清晰。
     \end{note}
-扩散层
 \end{enumerate}
+    
+\begin{example}
+    参阅图 \ref{8.2_界面移动法测电迁移数}, 设玻璃管的横截面积为 \qty{1.0E-5}{\meter\squared}， \ce{HCl} 溶液的浓度为 \qty{10.0}{\mole\per\meter\cubed}，当通以 \qty{0.01}{\ampere} 的电流历时 \qty{200}{\second} 后，界面从 $ bb' $ 移到 $ aa' $ ，移动了 \qty{0.17}{\meter} ，求 \ce{H+} 的迁移数。
 
+    {\heiti 解} \quad 在 $ bb' $ 与 $ aa' $ 区间内的 \ce{H+} 均通过 $ aa' $ 面向上移，设这个区间的体积是 $ V $ ，通过 $ aa' $ 面的 \ce{H+} 的个数为 $ cVL $ ，它所迁移的电荷量为
+    \begin{equation*}
+        cVLz_{+}e = z_{+}cVF
+    \end{equation*}
+    经历时间 $ t $ 后通入的总电荷量为 $ It $ ，根据迁移数的定义有
+    \begin{equation*}
+        \begin{aligned}
+            t_{\ce{H+}} &= \frac{\text{\ce{H+}所迁移的电荷量}}{\text{通过的总电荷量}} = \frac{z_{+}cVF}{It} \\
+            &= \frac{1 \times \qty{10.0}{\mole\per\meter\cubed} \times (0.17 \times \qty{1.0E-5})\si{\meter\cubed} \times \qty{96500}{\coulomb\per\mole}}{\qty{0.01}{\coulomb\per\second} \times \qty{200}{\second}} \\
+            &= 0.82
+        \end{aligned}
+    \end{equation*}
+\end{example}
+%----------%
 \subsection{电解质溶液的电导 20260309 20260311}
 
 \subsubsection{电导、电导率、摩尔电导率}
