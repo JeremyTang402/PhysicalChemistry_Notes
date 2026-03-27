@@ -302,6 +302,7 @@
   labelfont={bf,color=ecolor}}
 \captionsetup[table]{skip=3pt}
 \captionsetup[figure]{skip=3pt}
+\captionsetup{labelsep=space}
 
 % list/itemize/enumerate setting
 \RequirePackage[shortlabels,inline]{enumitem}

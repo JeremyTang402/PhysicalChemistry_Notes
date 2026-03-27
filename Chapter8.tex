@@ -160,7 +160,10 @@
 \end{definition}
 
 \begin{enumerate}[resume]
-    \item 对 $ t_+ + t_- = 1 $ 的证明 待完成。
+    \item 对 $ t_+ + t_- = 1 $ 的证明待完成。
+    \item 浓度对离子的迁移数有影响，在较浓的溶液中离子间相互引力较大，正、负离子的移动速率均减慢，若正、负离子的价数相同，则所受影响也大致相同，迁移数的变化不大。若价数不同，则价数大的离子的迁移数减小比较明显。
+    
+    温度对离子的迁移也有影响，主要影响离子的水合程度。温度升高，正、负离子的移动速率均加快，两者的迁移数趋于相等。
 \end{enumerate}
 
 \subsubsection{离子迁移数的测定}
@@ -173,7 +176,7 @@
 
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.3\textwidth]{8.2_Hittorf法测电迁移数.png}
+            \includegraphics[width=0.4\textwidth]{8.2_Hittorf法测电迁移数.png}
             \caption{Hittorf 法测定迁移数的实验装置示意图}
             \label{8.2_Hittorf法测电迁移数}
         \end{figure}
@@ -239,7 +242,7 @@
         \item 如图 \ref{8.2_界面移动法测电迁移数} 所示，在管中先放 \ce{CdCl2} 溶液，然后再小心放入 \ce{HCl} 溶液，形成 $ bb' $ 界面。在通电过程中， \ce{Cd} 从阳极上溶解下来，\ce{H2(g)} 从阴极上放出，溶液中 \ce{H+} 向上移动， $ bb' $ 界面也上移。由于 \ce{Cd^2+} 的移动速率比 \ce{H+} 的小， \ce{Cd^2+} 跟在 \ce{H+} 之后向上移动，所以不会产生新的界面。根据管子的横截面积、在通电的时间内界面移动的距离及通过该电解池的电荷量就可计算出离子的迁移数。
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.3\textwidth]{8.2_界面移动法测电迁移数.png}
+            \includegraphics[width=0.4\textwidth]{8.2_界面移动法测电迁移数.png}
             \caption{界面移动法测定迁移数的实验装置示意图}
             \label{8.2_界面移动法测电迁移数}
         \end{figure}
@@ -266,47 +269,108 @@
         \end{aligned}
     \end{equation*}
 \end{example}
-%----------%
+
 \subsection{电解质溶液的电导 20260309 20260311}
 
 \subsubsection{电导、电导率、摩尔电导率}
 
 \begin{enumerate}
-    \item 电解质导电能力用电导（electric conductance）$ G $ 表示，$ G = \frac{1}{R} $，单位为 \si{\siemens} 或 \si{\per\ohm}。
-    \item 据 Ohm（欧姆）定律，电压、电流和电阻三者之间的关系为
+    \item 电解质导电能力用电导（electric conductance）$ G $ 表示，$ \displaystyle G = \frac{1}{R} $，单位为 \si{\siemens} 或 \si{\per\ohm}。
+    \item 据 Ohm定律，电压、电流和电阻三者之间的关系为
     \begin{equation}
         R = \frac{U}{I}
     \end{equation}
 
-    式中 $ U $ 为外加电压（单位为 V）；$ I $ 为电流强度（单位为 A）。由 $ G = R^{-1} $，可得
-
+    式中 $ U $ 为外加电压；$ I $ 为电流强度。由 $ G = R^{-1} $，可得
     \begin{equation}
         G = R^{-1} = \frac{I}{U}
     \end{equation}
 
-    式中 $ \rho $ 是比例系数，称为电阻率 (resistivity)，单位是。 电导率 (electric  conductivity) K 是电阻率的倒数，即
+    导体的电阻与其长度 $ l $ 成正比，而与其截面积 $ A $ 成反比，用公式表示为
     \begin{equation}
-        k = \frac{1}{\rho} = \frac{L}{S R} = \frac{G L}{S} %k?
+        R \propto \frac{l}{A} \qquad \text{或} \qquad R = \rho \frac{l}{A}
     \end{equation}
 
-    表示：两个电极面积为\qty{1}{\meter\squared}，电极间距为\qty{1}{\meter}，包含\qty{1}{\meter\cubed} 电解质溶液时的电导。
+    式中 $ \rho $ 是比例系数，称为电阻率，单位是 \si{\ohm\m}。电导率 $ \kappa $ 是电阻率的倒数，即
+    \begin{equation}
+        \kappa = \frac{1}{\rho}
+    \end{equation}
 
-    \item 摩尔电导率 (molar conductivity) $ \Lambda_{\text{m}} $ 把含有 \qty{1}{\mole} 电解质的溶液置于  间距为单位距离的电导池的两个平行电极之间时所具有的电导，单位为 \si{\siemens\meter\squared\per\mole}。
+    则
+    \begin{equation}
+        G = \kappa \frac{A}{l}
+    \end{equation}
+
+    $ \kappa $ 指单位长度\qty{1}{\meter}、单位截面积\qty{1}{\meter\squared}导体的电导，单位为\si{\siemens\per\meter}或\si{\per\ohm\per\meter}。
+
+    \item 摩尔电导率$ \Lambda_{\text{m}} $ ：把含有 \qty{1}{\mole} 电解质的溶液置于间距为单位距离的电导池的两个平行电极之间时所具有的电导。所取溶液的体积 $ V_\text{m} $ 随浓度而改变， $ \displaystyle V_{\text{m}} = \frac{1}{c} $。
     \begin{equation}
         \Lambda_{\text{m}} \xlongequal{\text{def}} k V_\text{m} = \frac{k}{c}
     \end{equation}
+    摩尔电导率 $ \Lambda_{\text{m}} $ 的单位为单位为 \si{\siemens\meter\squared\per\mole}。
+
+    \begin{figure}[h]
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.75\textwidth]{8.3_电导率.png}
+            \caption{电导率定义示意图}
+            \label{8.3_电导率}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.75\textwidth]{8.3_摩尔电导率.png}
+            \caption{摩尔电导率定义示意图}
+            \label{8.3_摩尔电导率}
+        \end{minipage}
+    \end{figure}
+    
 \end{enumerate}
 
+\begin{example}
+    在 \qty{291}{\kelvin} 时，浓度为 \qty{10}{\mole\per\meter\cubed} 的 \ce{CuSO4} 溶液的电导率为 \qty{0.1434}{\siemens\per\meter}，试求 \ce{CuSO4} 的摩尔电导率 $ \Lambda_{\text{m}}(\ce{CuSO4}) $ 和 $ \displaystyle \frac{1}{2} $ \ce{CuSO4} 的摩尔电导率 $ \displaystyle \Lambda_{\text{m}}(\frac{1}{2} \ce{CuSO4}) $。
+
+    {\heiti 解}
+    \begin{equation*}
+        \begin{aligned}
+            \Lambda_{\text{m}}(\ce{CuSO4}) &= \frac{\kappa}{c(\ce{CuSO4})} \\
+            &= \frac{\qty{0.1434}{\siemens\per\meter}}{\qty{10}{\mole\per\meter}} \\
+            &= \qty{1.434E-2}{\siemens\meter\squared\per\mol} \\
+            &= \qty{14.34E-3}{\siemens\meter\squared\per\mol} \\
+            \Lambda_{\text{m}}(\frac{1}{2}\ce{CuSO4}) &= \frac{\kappa}{c(\frac{1}{2}\ce{CuSO4})} \\
+            &= \frac{\qty{0.1434}{\siemens\per\meter}}{2 \times \qty{10}{\mole\per\meter}} \\
+            &= \qty{7.17E-2}{\siemens\meter\squared\per\mol} \\
+        \end{aligned}
+    \end{equation*}
+
+    \begin{note}
+        \begin{enumerate}
+            \item 浓度的单位要换算为 \si{\mole\per\meter\cubed}；
+            \item 使用摩尔电导率时，应将浓度为 $ c $ 的物质的基本单元置于 $ \Lambda_{\text{m}} $ 后的括号中。
+        \end{enumerate}
+    \end{note}
+\end{example}
+%----------%
 \subsubsection{电导的测定}
 
 \begin{enumerate}
+    \item 常用电导池内放电解质溶液，电导池中的电极一般用铂片制成，在铂片上镀上铂黑以增加电极面积。
     \item 用 Wheatstone 电桥测电导
     \item 
     \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.4\textwidth]{8.3_Wheatstone电桥.png}
-        \caption{用 Wheatstone 电桥测电导的装置示意图}
-        \label{8.3_Wheatstone电桥}
+         \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.4\textwidth]{8.3_电导池.png}
+            \caption{实验室中几种常用的电导池示意图}
+            \label{8.3_电导池}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.4\textwidth]{8.3_Wheatstone电桥.png}
+            \caption{用 Wheatstone 电桥测电导的装置示意图}
+            \label{8.3_Wheatstone电桥}
+        \end{minipage}
     \end{figure}
 
     近：用于高电导率测定；远：用于低电导率测定。

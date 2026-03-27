@@ -21,6 +21,9 @@
   inter-unit-product = \cdot
 }
 
+\let\oldce\ce
+\renewcommand{\ce}[1]{\text{\oldce{#1}}}
+
 \begin{document}
 
 \maketitle
