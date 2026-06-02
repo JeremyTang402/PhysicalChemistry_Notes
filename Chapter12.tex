@@ -1,0 +1,326 @@
+% !TeX root = elegantnote-cn.tex
+\section{化学动力学基础（二）}
+
+\subsection{碰撞理论 20260518 20260520}
+
+\begin{enumerate}
+    \item 有效碰撞
+    \item 简单碰撞理论
+\end{enumerate}
+
+\subsubsection{双分子的互碰频率好速率常数的推导}
+
+\begin{enumerate}
+    \item 简单碰撞理论推导出的速率常数
+    \begin{equation}
+        k = \pi d_{\mathrm{AB}}^2 L \sqrt{\frac{8RT}{\pi \mu}}
+    \end{equation}
+    \item 反应速率常数 $k$ 应为
+    \begin{equation}
+        k = \pi d_{\mathrm{AB}}^2 L \sqrt{\frac{8RT}{\pi \mu}} \mathrm{e}^{-\frac{E}{RT}} = A \mathrm{e}^{-\frac{E}{RT}}
+    \end{equation}
+    $A$ 为\textbf{频率因子}
+\end{enumerate}
+
+\subsubsection{概率因子}
+
+\begin{enumerate}
+    \item 在公式中增加矫正因子 $P$，
+    \begin{equation}
+        k(T) = P A \exp\left(-\frac{E_{\mathrm{a}}}{RT}\right)
+    \end{equation}
+    式中 $P$ 称为概率因子或空间因子。
+    \item 概率因子 $P$ 的计算并不简单。
+\end{enumerate}
+
+\subsection{过渡态理论 20260520}
+
+\begin{enumerate}
+    \item 过渡态理论又称为活化络合物理论。
+    \item 化学反应不是只通过简单碰撞就可完成的，而是要经过一个由反应物分子以一定的构型存在的过渡态，在形成过渡态的过程中要考虑分子的内部结构、内部运动，并认为反应物分子在相互接触的全过程中都存在着相互作用，系统的势能一直在变化。
+    \item 也称为绝对反应速率理论。
+\end{enumerate}
+
+\subsubsection{势能面}
+
+\begin{enumerate}
+    \item 原子间相互作用表现为原子间有势能 $E_{\mathrm{p}}$ 存在，势能 $E_{\mathrm{p}}$ 的值是原子的核间距 $r$ 的函数。
+    \begin{equation}
+        E_{\mathrm{p}} = E_{\mathrm{p}}(r)
+    \end{equation}
+    \item 根据 Morse 经验公式可画出双原子分子的 Morse 势能曲线。 %pic
+    
+    \begin{enumerate}
+        \item 当 $r < r_0$ 时，核间有排斥力，当 $r > r_0$ 时，核间有吸引力，即化学键力。
+        \item 振动量子数 $v = 0$，分子处于振动基态。
+        \item 把基态分子解离为孤立原子需要的能量为 $D_0$，$D_0 = D_{\mathrm{e}} - E_0$，$E_0$ 为零点能。
+    \end{enumerate}
+    \item 以简单反应为例：
+        $\ch{A} + \chemfig{B-C}
+        \ch{<=>}
+        [\ch{A} \cdots \ch{B} \cdots \ch{C}]^{\ddagger}
+        \ch{->}
+        \chemfig{A-B} + \ch{C}$
+    \item 势能面 马鞍点
+\end{enumerate}
+
+\subsubsection{由过渡态理论计算反应速率常数}
+
+\begin{enumerate}
+    \item sdfg
+    \begin{equation}
+        k = \frac{k_{\mathrm{B}} T}{h} K_c^{\ddagger}
+    \end{equation}
+    \item 对于一般反应，有
+    \begin{equation}
+        K_c^{\circ} = K_c^{\ddagger}\left(c^{\circ}\right)^{n-1}
+    \end{equation}
+    \item 以浓度为标度的\textbf{标准摩尔活化 Gibbs 自由能} $\Delta_{\mathrm{r}}^{\ddagger}G_{\mathrm{m}}^{\circ}\left(c^{\circ}\right)$ 为
+    \begin{equation*}
+        \Delta_{\mathrm{r}}^{\ddagger}G_{\mathrm{m}}^{\circ}\left(c^{\circ}\right) = -RT\ln\left[ K_c^{\ddagger}\left(c^{\circ}\right)^{n-1}\right]
+    \end{equation*}
+    \item 从式 (12.50) 也可看出，反应速率不仅取决于活化焙，还与活化熵有关，两者对速率常数的影响刚好相反。
+    \item 理论的优缺点
+\end{enumerate}
+
+\subsection{单分子反应理论 20260520}
+
+\begin{enumerate}
+    \item 单分子反应，准单分子反应
+    \item Lindemann 等人提出了单分子反应的碰撞理论：简单碰撞理论+时滞假设
+    \item 总反应 $\ch{A} \ch{->} \ch{P}$
+
+    具体步骤为 $\ch{A} + \ch{A} \ch{<=>[ $k_1$ ][ $k_{-1}$ ]} \ch{A^*} + \ch{A}$
+    
+    \begin{equation}
+        r = \frac{\mathrm{d}[\ch{P}]}{\mathrm{d}t} = k_2 [\ch{A}^*] = \frac{k_1 k_2 [\ch{A}]^2}{k_{-1}[\ch{A}] + k_2}
+    \end{equation}
+    \item 在高压条件下，反应近似为一级反应；低压下为二级反应
+    \item \textbf{RRKM (Rice-Ramsperger-Kassel-Marcus) 理论}
+    \begin{enumerate}
+        \item 将 Lindemann 理论修正为
+        
+            $\ch{A} + \ch{A} \ch{<=>[ $k_1$ ][ $k_{-1}$ ]} \ch{A^*} + \ch{A}$
+
+            $\ch{A^*} \ch{->[ $k_2(E^*)$ ]} \ch{A^{$\ddagger$}} \ch{->[ $k^{\ddagger}$ ]} \ch{P}$
+        \item 核心要点是如何计算 $k_2$。
+        \begin{equation}
+            k_2(E^*) = \frac{k^{\ddagger}[\ch{A^{$\ddagger$}}]}{[\ch{A^*}]}
+        \end{equation}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{分子反应动态学简介}
+
+\subsection{在溶液中进行的反应 20260525}
+
+\subsubsection{溶剂对反应速率的影响——笼效应}
+
+\begin{enumerate}
+    \item 溶剂分子形成一个笼。
+    \item 在笼中连续的反复碰撞称为反应分子的一次\textbf{遭遇}。
+    \item 溶剂对反应速率的影响
+    \begin{enumerate}
+        \item 溶剂介电常数对有离子参加反应的影响
+        \item 溶剂的极性对反应速率的影响
+        \item 溶剂化的影响
+        \item 离子强度的影响——原盐效应
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{原盐效应}
+
+\begin{enumerate}
+    \item 设溶液中离子 $\ch{A}^{z_{\mathrm{A}}}$ 和 $\ch{B}^{z_{\mathrm{B}}}$ 的反应为
+    $$\ch{A}^{z_{\mathrm{A}}} + \ch{B}^{z_{\mathrm{B}}}
+    \ch{<=>}
+    \left[ ( \ch{A} \cdots \ch{B} ) \right]^{z_{\mathrm{A}} + z_{\mathrm{B}}}$$
+
+    \begin{equation}
+        \lg{\frac{k}{k_0}} = -A \left[z_{\mathrm{A}}^2 + z_{\mathrm{B}}^2 - (z_\mathrm{A} + z_\mathrm{B})^2\right] \sqrt{I} = 2 z_\mathrm{A} z_\mathrm{B} A \sqrt{I}  
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{由扩散控制的反应}
+
+\subsection{快速反应的几种测试手段}
+
+\subsection{光化学反应 20260525 20260527}
+
+\subsubsection{光化学反应与热化学反应的区别}
+
+\begin{enumerate}
+    \item 光子的能量随光波长的增大而下降
+    \begin{equation*}
+        \varepsilon = h \frac{c}{\lambda}
+    \end{equation*}
+    \item 摩尔光子能量
+\end{enumerate}
+
+\subsubsection{光化学反应的初级过程和次级过程}
+
+\begin{enumerate}
+    \item 初级过程：反应物吸收光子
+    \item 初级过程的产物可以进行一系列的次级过程，如发生猝灭、荧光和磷光，最后跃迁回基态使得次级反应停止。
+\end{enumerate}
+
+\subsubsection{光化学基本定律}
+
+\begin{enumerate}
+    \item 光化学第一定律，\textbf{Grotthus-Draper 定律}：只有被分子吸收的灯光才能引起分子的光化学反应。
+    \item 光化学第二定律：初级反应中，一个反应分子吸收一个光子而被活化。
+    \item Lambert-Beer定律：平行单色光通过一均匀吸收介质是，未被吸收的透射光强度 $I_\mathrm{t}$ 与入射光强度 $I_0$ 的关系为
+    \begin{equation}
+        I_\mathrm{t} = I_0 \exp\left(-\kappa d c\right)
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{量子产率}
+
+\begin{enumerate}
+    \item 量子产率衡量光化学反应的效率。对于指定反应，
+    \begin{equation}
+        \phi \xlongequal{\mathrm{def}} \frac{\text{反应物分子消失数目}}{\text{吸收光子数目}}
+    \end{equation}
+    \item 动力学中常用量子产率定义
+    \begin{equation}
+        dsf
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{光化学反应动力学}
+
+\begin{enumerate}
+    \item 光化学反应要了解其初级过程和次级过程。
+    \item 简单反应 \ch{A2} \ch{->} \ch{2 A}。其历程为
+    \[
+    \begin{array}{l l l}
+        (1)\ch{A2} + h \nu \ch{->[ $I_\mathrm{a}$ ]} \ch{A^*_2} & & \\
+    \end{array}
+    \]
+\end{enumerate}
+
+\subsubsection{光化学平衡和热化学平衡}
+
+\begin{enumerate}
+    \item 设反应物 
+    \item 以蒽的二聚为例：
+    $$\ch{2 C14H10} \ch{<=>[光][热]} \ch{C28H20}$$
+    与反应物的浓度无关
+    \item 若总的速率常数中包含某一步骤的速率常数 $k_1$ 和平衡常数 $K^\circ$，有如下关系
+    \begin{equation*}
+        k = k_1 K^\circ
+    \end{equation*}
+    则
+    \begin{equation*}
+        \begin{aligned}
+            \frac{\mathrm{d}\ln{k}}{\mathrm{d}T} &= \frac{\mathrm{d}\ln{k_1}}{\mathrm{d}T} + \frac{\mathrm{d}\ln{K^\circ}}{\mathrm{d}T} \\
+            &= \frac{E_\mathrm{a}}{R T^2} + \frac{\Delta_\mathrm{r}H^\circ_\mathrm{m}}{R T^2} \\
+            &= \frac{E_\mathrm{a} + \Delta_\mathrm{r}H^\circ_\mathrm{m}}{R T^2} \\
+        \end{aligned}
+    \end{equation*}
+    提高温度反应速率反而降低，有负的温度系数
+    \item 光化学反应和热化学反应的主要区别
+    \begin{enumerate}
+        \item 热反应中反应分子靠频繁互碰二获得克服势垒所需要的活化能；在光化学反应中，分子靠吸收外来光能后激发而克服势垒。
+        \item 定温定压下
+        \item 热化学反应的反应速率受温度的影响比较明显；
+        \item 在对峙反应中，在正逆方向只要有一个是光化学反应，建立稳定态……
+        \item 对于光化学反应，关系 $\Delta_\mathrm{r}G^\circ_\mathrm{m} = -R T \ln K^\circ$ 不存在。
+        \item sdf 
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{感光反应、化学发光}
+
+\begin{enumerate}
+    \item 感光剂/光敏剂：吸收辐射，将光能传递给反应物，使反应物发生作用，而本身在反应前后并不发生变化。
+    \item 例如氢气解离为氢原子反应中的汞蒸气，光合作用中的叶绿素。
+    \item 化学发光是化学反应过程中发出的光，可看成光化学反应的逆过程。
+    \item 激发态分子回到基态时发出辐射，发光温度低，又称化学冷光。
+\end{enumerate}
+
+\subsection{化学激光简介}
+
+\subsection{催化反应动力学 20260527}
+
+\subsubsection{催化剂与催化作用}
+
+\begin{enumerate}
+    \item 能加快反应速率而不改变总标准摩尔 Gibbs 自由能变化的物质称为\textbf{催化剂}，相关过程称为\textbf{催化作用}，有催化剂参与的反应称为\textbf{催化反应}。
+    \item 能使反应速率变慢的物质称为\textbf{抑制剂}。
+    \item 参与具体反映，改变反应途径，降低反应活化能。
+    \item 均相催化、多相催化
+    \item 催化反应动力学
+    \begin{enumerate}
+        \item 设催化剂加速反应 $\ch{A} + \ch{B} \ch{->[K]} \ch{AB}$
+        
+        设其机理为
+        \begin{subequations}
+            \renewcommand{\theequation}{\arabic{equation}}
+            \begin{equation}
+                \ch{A} + \ch{K} \ch{<=>[ $k_1$ ][ $k_2$ ]} \ch{AK}
+            \end{equation}
+            \begin{equation}
+                \ch{AK} + \ch{B} \ch{->[ $k_3$ ]} \ch{AB} + \ch{K}
+            \end{equation}
+        \end{subequations}
+
+    
+    \end{enumerate}
+    \item 活化熵也可影响速率常数
+    \item 综上所述可知：
+    \begin{enumerate}
+        \item 催化剂能加快反应到达平衡的速率，是由于改变反应历程，降低活化能。
+        \item 催化剂在反应前后，其化学性质没有改变，但由于参与反应，在反应前后常有物理性状的改变。
+        \item 催化剂不影响化学平衡。
+        \item 催化剂有特殊选择性。
+        \item 有些反应速率和催化剂的浓度成正比，可能是因为参加反应成为中间化合物。
+        \item 在催化剂或反应系统内加入少量杂质常可以强烈影响催化剂的作用，这些杂质既可以成为助催化剂也可以成为反应的毒物。催化剂中毒有阶段性中毒和永久性中毒。
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{均相酸碱催化}
+
+\begin{enumerate}
+    \item 催化剂分子把质子转移给反应物。
+    \item 催化剂的效率常与酸催化剂的酸强度有关
+    \item 酸失去质子的趋势用解离常数 $K_\mathrm{a}$ 来衡量。
+    \begin{equation*}
+        \ch{HA} + \ch{H2O} \ch{<=>} \ch{H3O+} + \ch{A-}
+    \end{equation*}
+    酸催化的反应速率常数 $k_\mathrm{a}$ 与酸的解离常数 $K_\mathrm{a}$ 成比例。
+    \begin{equation}
+        k_\mathrm{a} = G_\mathrm{a} K_\mathrm{a}^{\alpha}
+        \label{AcidCatalyst}
+    \end{equation}
+    或
+    \begin{equation}
+        \lg{k_\mathrm{a}} = \lg{G_\mathrm{a}} + \alpha \lg{K_\mathrm{a}}
+    \end{equation}
+    \item 以 $\lg{k_\mathrm{a}}$ 对 $\lg{K_\mathrm{a}}$ 作图，斜率为 $\alpha$。
+    \item 对于碱催化反应，催化作用速率常数 $k_\mathrm{b}$ 与碱的解离常数 $K_\mathrm{b}$ 有
+    \begin{equation}
+        k_\mathrm{b} = G_\mathrm{b} K_\mathrm{b}^{\beta}
+        \label{BaseCatalyst}
+    \end{equation}
+    \item 式 (\ref{AcidCatalyst}) 和 (\ref{BaseCatalyst}) 称为 \textbf{Brönsted 关系式} 或 \textbf{Brönsted 定律}。
+\end{enumerate}
+
+\subsubsection{络合催化}
+
+\subsubsection{酶催化反应}
+
+\begin{enumerate}
+    \item 酶催化作用可看作介于均相和非均相催化之间，既可以看成反应物与酶形成了中间化合物，也可以看成在酶的表面上首先吸附了底物，再进行反应。
+    \item 引入米氏常数
+    \item 反应速率达到最大速率的一半时，底物的浓度就等于米氏常数。
+    \item 酶催化反应的特点：
+    \begin{enumerate}
+        \item 高度的选择性和单一性。
+        \item 酶催化反应的催化效率非常高，比一般的无机或有机催化剂高出 \qtyrange{E8}{E12}{} 倍。
+        \item 酶催化反应所需的条件温和，一般在常温常压下即可进行。
+        \item 酶催化反应同时具有均相反应和多相反应的特点。
+        \item 酶催化反应的历程复杂，酶反应受 $\mathrm{pH}$、温度及离子强度的影响较大。
+    \end{enumerate}
+\end{enumerate}

@@ -1,0 +1,140 @@
+% !TeX root = elegantnote-cn.tex
+\section{电解与极化作用}
+
+\subsection{分解电压 20260330}
+
+\begin{enumerate}
+    \item 理论分解电压：使某电解质溶液能连续不断发生电解时所必须外加的最小电压，在数值上等于该电解池作为可逆电池时的可逆电动势。
+    \item 分解电压的测定
+    \begin{enumerate}
+        \item 将电解池接到由电源和可变电阻所组成的分压器上，逐渐增加外加电压，同时记录相应的电流，然后绘制电流 -- 电压曲线。 % -- 调整
+        \item 开始时外加电压很小，几乎没有电流通过。此后电压增加电流略有增加。当电压增加到某一数值以后，曲线的斜率急增，继续增加电压，电流就随电压直线上升。
+        \item 曲线分析
+        \begin{enumerate}
+            \item 外加电压很小时，几乎无电流通过，阴、阳极上无 \ch{H2(g)} 和 \ch{Cl2(g)} 放出。
+            \item 随着 $ E $ 的增大，电极表面产生少量氢气和氯气，但压力低于大气压，无法逸出。
+            \item 所产生的氢气和氯构成了原电池，外加电压必须克服这反电动势，继续增加电压，$ I $ 有少许增加，如图中1-2段。
+            \item 当 $ p_{\ch{H2}} $ 和 $ p_{\ch{Cl2}} $ 增加到等于外界的大气压力肘, 电极上就开始有气泡逸出，此时反电动势 $ E_b $ 达到最大值 $ E_{b, max} $ 而不再继续增大。
+            \item 继续增大外加电压，只增加溶液中的电势降 ($ E_{\text{外}} - E_{b, max} = IR $)，从而使电流急增。如图中2-3段上升直线部分。
+        \end{enumerate} 
+        \item 将直线外延至 $ I = 0 $ 处，得 $ E_{b, max} $ 值，称为分解电压。有时也成称击穿电压。
+    \end{enumerate}
+    \begin{figure}[h]
+         \begin{minipage}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{10.1_分解电压测定.png}
+            \caption{分解电压的测定}
+            \label{10.1_分解电压测定}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.58\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{10.1_分解电压E-I曲线.png}
+            \caption{测定分解电压时的电流 -- 电压曲线}
+            \label{10.1_分解电压E-I曲线}
+        \end{minipage}
+    \end{figure}
+    \item 电解池顺利进行连续反应，除克服作为原电池时的可逆电动势外，还要克服由于极化在阴、阳极上产生的超电势 $ \eta_{\text{阴}} $ 和 $ \eta_{\text{阳}} $，以及电池电阻所产生的电位降 $ IR $。这三者的加和称为实际分解电压，其数值会随着通入电流强度的增加而增加。
+    \begin{equation*}
+        \begin{aligned}
+            E_{\text{分解}} &= E_{\text{可逆}} + \Delta E_{\text{不可逆}} + IR \\
+            \Delta E_{\text{不可逆}} &= \eta_{\text{阴}} + \eta_{\text{阳}}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\subsection{极化作用 20260330 20260401}
+
+\begin{enumerate}
+    \item 电解过程常在不可逆情况下发生，所用的电压大于自发电池的电动势。实际分解电压超过可逆的电动势。
+    \begin{equation}
+        E_{\text{分解}} = E_{\text{可逆}} + \Delta E_{\text{不可逆}} + IR
+    \end{equation}
+    \item 电极上无电流通过，点击处于平衡状态，与之对应的电极电势是电极的可逆电极电势 $ \varphi_{\text{可逆}} $，随着电极上电流密度的增大，电极反应的不可逆程度越来越大，其电极电势值对可逆电极电势值的偏离也越来越大。描述电流密度与电极电势关系的曲线成为极化曲线。
+    \item 有电流通过电极时，电极电势偏离其可逆值的现象成为\textbf{电极的极化}。
+
+\end{enumerate}
+
+\subsubsection{浓差极化}
+
+\begin{enumerate}
+    \item 浓度梯度扩散，电极表面界面层向外扩散，在有电流通过时，$ a'_{\ch{Ag}} < a_{\ch{Ag}} $
+    \item 在一定电流密度下，达到稳定状态后，溶液有一定的浓度梯度，此时电极附近的溶液浓度稳定，可看做把电极浸入浓度较小的溶液中。
+    \item 由于浓度差别所引起的极化称为\textbf{浓差极化}，相应的超电势称为浓差超电势。
+\end{enumerate}
+
+\subsubsection{电化学极化}
+
+\begin{enumerate}
+    \item 要使有些电解池的电解顺利进行，所加电压必须比该电池的反电动势
+\end{enumerate}
+
+\subsubsection{极化曲线 —— 超电势的测定}
+
+\begin{enumerate}
+    \item 电极上有电流，无法直接测量。
+    \item 三电极两回路，对消法测定
+    \item 工作电极+参比电极，工作电极+辅助电极，电流电压分开测量。
+    \item 电流密度不同时，两极的电极电势不同，因而超电势也不同。
+    \item 电解时电流密度越大，超电势越大，则外加电压也要增大，消耗能量也就越多。
+    \item 电极面积：几何面积、真实面积、电活性面积。
+    \item 无论是原电池还是电解池，极化作用的存在都是不利的。为使电极的极化减小，必须供给电极以适当的反应物质。\textbf{去极化作用}，\textbf{去极化剂}
+\end{enumerate}
+
+\subsubsection{氢超电势}
+
+\begin{enumerate}
+    \item 气体，特别是氢气和氧气，超电势值较大。氢气在几种电极上的超电势有差异。在镀铂黑的铂电极上，氢的超电势很小。
+    \item 影响超电势的因素很多，如电极材料、电极表面状态、电流密度、温度、电解质的性质、浓度及溶液中的杂质等。
+    \item \textbf{Tafel 公式}
+    \begin{equation}
+        \eta = a + b \ln(j/[j])
+    \end{equation}
+    式中 $ j $ 是电流密度，$ [j] $ 是电流密度的单位。
+
+    可以用来衡量电极材料的性能。
+\end{enumerate}
+
+\subsection{电解时电极上的竞争反应 20260401}
+
+\subsubsection{金属的析出与氢的超电势}
+
+\begin{enumerate}
+    \item 阴极还原反应：判断在阴极上首先析出何种物质，应把可能发生还原物质的电极电势计算出来，同时考虑它的超电势。电极电势最大的首先在阴极析出。
+    \begin{equation*}
+        \varphi_{\ch{H+}|\ch{H2}} = -\frac{RT}{F}\ln{\frac{1}{a_{\ch{H+}}}} - \eta_{\ch{H2}}
+    \end{equation*}
+    \item 阳极氧化反应：判断在阳极上首先发生什么反应，应把可能发生氧化物质的电极电势计算出来，同时要考虑它的超电势。电极电势最小的首先在阳极氧化。
+    \begin{equation*}
+        \varphi_{\ch{A}|\ch{A^{$z$-}}} = \varphi^{\circ}_{\ch{A}|\ch{A^{$z$-}}} - \frac{RT}{zF}\ln{a_{\ch{A^{$z$-}}}} + \eta_{\text{阳}}
+    \end{equation*}
+    \item 确定阳极、阴极析出的物质后，将析出电势相减，得到实际分解电压。阳极电极电势高，故用阳极析出电势减去阴极析出电势。
+    \begin{equation*}
+        E_{\text{分解}} = \varphi_{\text{阳, 析出}} - \varphi_{\text{阴, 析出}}
+    \end{equation*}
+\end{enumerate}
+
+\subsubsection{金属离子的分离}
+
+\begin{enumerate}
+    \item 溶液中含有多个析出电势不同的金属离子，可以控制外加电压的大小，使金属离子分步析出而达到分离的目的。
+    \item 后一种离子反应时，前一种离子的活度应减少到 \num{E-7} 以下，这样要求两种离子的析出电势相差一定的数值。
+
+\end{enumerate}
+
+\subsection{金属的电化学腐蚀、防腐与金属的钝化 20260408}
+
+\subsubsection{金属的电化学腐蚀}
+
+\subsubsection{金属的防腐}
+
+\begin{enumerate}
+    \item 不锈钢、钝化、涂装、阳极保护（牺牲阳极）
+\end{enumerate}
+\subsubsection{金属的钝化}
+
+\subsection{化学电源 20260408}
+
+\begin{enumerate}
+    \item
+\end{enumerate}

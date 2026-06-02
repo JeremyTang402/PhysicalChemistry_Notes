@@ -1,0 +1,211 @@
+% !TeX root = elegantnote-cn.tex
+\section{表面物理化学}
+
+\begin{enumerate}
+    \item 界面：密切接触的两相之间的过渡区，约有几个分子的厚度。
+    \item 根据物质状态的不同界面可以分为气 -- 液、气 -- 固、液 -- 液、液 -- 固和固 -- 固等界面。
+    \item 气 -- 液，气 -- 固界面习惯上称为表面。
+    \item 内部分子力场均匀，表面分子力场不均匀——表面张力。
+    \item 液滴由于表面张力呈球状，固体则通过吸附气体分子改变不均匀力场。
+    \item 比表面：表示多相分散系统的分散程度
+    \begin{equation}
+        A_0 = \frac{A_{\mathrm{s}}}{m}
+    \end{equation}
+    式中 $ A_{\mathrm{s}} $ 是物质的总表面积， $ m $ 是物质的质量。比表面即为单位质量物质的表面积，单位通常为 \si{\meter \squared \per \gram}
+    \item 材料纳米化时，需加入表面活性剂，防止爆炸。
+\end{enumerate}
+
+\subsection{表面张力及表面 Gibbs 自由能 20260408 20260413}
+
+\subsubsection{表面张力}
+
+\begin{enumerate}
+    \item 液体表面的基本特性是趋向收缩。
+    \item 金属丝框架
+    \begin{equation}
+        F = 2 \gamma l
+    \end{equation}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.2\textwidth]{13.1_金属框表面张力.png}
+        \caption{可滑动的金属丝在向上的表面作用力与向下的重力作用下处于平衡}
+        \label{13.1_金属框表面张力}
+    \end{figure}
+\end{enumerate}
+
+\subsubsection{表面热力学的基本公式}
+
+\begin{enumerate}
+    \item 考虑系统的表面功（$ \gamma \mathrm{d} A_{\mathrm{s}} $），热力学第一定律和第二定律的联合公式为
+    \begin{equation}
+        \mathrm{d}U = T \mathrm{d}S - p \mathrm{d}V + \gamma \mathrm{d} A_{\mathrm{s}} + \sum_{{\mathrm{B}}}\mu_{\mathrm{B}} \mathrm{d}n_{\mathrm{B}}
+    \end{equation}
+    同理可得
+    \begin{equation}
+        \mathrm{d}H = T \mathrm{d}S + V \mathrm{d}p + \gamma \mathrm{d} A_{\mathrm{s}} + \sum_{{\mathrm{B}}}\mu_{\mathrm{B}} \mathrm{d}n_{\mathrm{B}}
+    \end{equation}
+    \begin{equation}
+        \mathrm{d}A = -S \mathrm{d}T - p \mathrm{d}V + \gamma \mathrm{d} A_{\mathrm{s}} + \sum_{{\mathrm{B}}}\mu_{\mathrm{B}} \mathrm{d}n_{\mathrm{B}}
+    \end{equation}
+    \begin{equation}
+        \mathrm{d}G = -S \mathrm{d}T + V \mathrm{d}p + \gamma \mathrm{d} A_{\mathrm{s}} + \sum_{{\mathrm{B}}}\mu_{\mathrm{B}} \mathrm{d}n_{\mathrm{B}}
+    \end{equation}
+    从上述关系可得
+    \begin{equation}
+        \gamma 
+        = \left(\frac{\partial U}{\partial A_{\mathrm{s}}}\right)_{S, V, n_{\mathrm{B}}} 
+        = \left(\frac{\partial H}{\partial A_{\mathrm{s}}}\right)_{S, p, n_{\mathrm{B}}} 
+        = \left(\frac{\partial A}{\partial A_{\mathrm{s}}}\right)_{T, V, n_{\mathrm{B}}} 
+        = \left(\frac{\partial G}{\partial A_{\mathrm{s}}}\right)_{T, p, n_{\mathrm{B}}} 
+    \end{equation}
+    $ \gamma $ 称为比表面 Gibbs 自由能。
+    \item 表面张力的测定——拉环法、滴重法（不同表面张力的液滴大小不同）、毛细管法、气泡最大压力法 % pic not on book
+\end{enumerate}
+
+\subsection{弯曲表面上的附加压力和蒸气压 20260413}
+
+\subsubsection{弯曲表面上的附加压力}
+
+\begin{enumerate}
+    \item 由于表面张力的作用，弯曲表面的内外所受压力不等，受到附加压力。
+    \item 对于凸液面、凹液面
+    \item 附加压力的大小与曲率半径有关。
+    \begin{equation*}
+        \begin{aligned}
+            p_{\mathrm{s}} \mathrm{d}V &= \gamma \mathrm{d}A_{\mathrm{s}} \\
+            A_{\mathrm{s}} &= 4 \pi R^2 \\
+            V &= \frac43 \pi R^3 \\
+        \end{aligned}
+    \end{equation*}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.2\textwidth]{13.2_表面附加压力.png}
+        \caption{液滴表面所产生的附加压力}
+        \label{13.2_表面附加压力}
+    \end{figure}
+    \item 毛细管液面上升，毛细管现象。
+\end{enumerate}
+
+\subsubsection{弯曲表面上的蒸气压}
+
+\begin{enumerate}
+    \item 液体的状态和性质将随液面曲率的不同而有所不同。
+    $ \Delta G_{\mathrm{vap}} = 0 $
+
+    过程2是等温等压下的液滴分割，……，根据 Laplace 公式，
+    \begin{equation}
+        \Delta G_2 = \int_{p_0}^{p_{\mathrm{r}} + \frac{2\gamma}{R'}} V_{\mathrm{m}} \mathrm{d}p + \gamma ({A_{\mathrm{s}} - A_0}) \approx \frac{2\gamma M}{R' \rho} + \gamma A_{\mathrm{s}}
+    \end{equation}
+    \item 凸液面 $ R' > 0 $，$ p' > p_0 $
+    
+    凹液面 $ R' < 0 $，$ p' < p_0 $
+    \item 由克-克方程，平液面和弯曲表面温度……
+    \item 亚稳状态。水沸腾，气泡为凹液面，气泡内蒸气压小于平液面蒸气压。过冷，降低温度迅速冷却。结晶（过饱和）也可用类似概念解释。
+\end{enumerate}
+
+\subsection{溶液的表面吸附 20260415}
+
+\subsubsection{溶液的表面吸附—— Gibbs 吸附公式}
+
+\begin{enumerate}
+    \item 物质在表面上富集的现象称为\textbf{吸附}。溶液表面的吸附作用导致表面浓度与内部浓度不同，称为\textbf{表面过剩}。
+    \item ……
+    \item Gibbs 吸附公式
+    \begin{equation}
+        \Gamma_{\mathrm{B}} = -\frac{a_{\mathrm{B}}}{RT}\frac{\mathrm{d} \gamma}{\mathrm{d} a_{\mathrm{B}}}
+    \end{equation}
+\end{enumerate}
+\subsection{表面活性剂及其作用 20260415}
+
+\begin{enumerate}
+    \item 胶束
+    \item 临界胶束浓度 CMC（critical micelle concentration）：形成胶束的最低浓度
+\end{enumerate}
+
+最大气泡压力法测表面张力
+
+\subsection{固体表面的吸附 20260420}
+
+\subsubsection{固体表面特点}
+
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+\subsubsection{吸附等温线}
+
+\begin{enumerate}
+    \item 吸附量 $q$ 通常用单位质量的吸附剂吸附气体的体积 $V$ 或物质的量 $n$ 表示
+    \item 吸附等温式、吸附等压式、吸附等量式
+    \item 等温吸附线的类型
+    \begin{enumerate}
+        \item 毛细凝聚现象
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Langmuir 吸附等温式}
+
+\begin{enumerate}
+    \item Langmuir 假定：
+    \begin{enumerate}
+        \item 固体表面均一
+        \item 固体表面处处吸附热相同
+        \item 吸附是单分子层
+        \item 吸附在固体表面的分子之间无相互作用
+    \end{enumerate}
+    \item 以 $\theta$ 代表表面被覆盖的分数，即表面覆盖率。气体吸附速率与气体压力、空白表面成正比，因此吸附速率 $r_{\mathrm{a}}$ 为
+    \begin{equation*}
+        r_{\mathrm{a}} = k_{\mathrm{a}} p(1 - \theta)
+    \end{equation*}
+    被吸附的分子脱离表面重新回到气相中的解吸（脱附）速率与 $\theta$ 成正比，即解吸速率 $r_\mathrm{d}$ 为
+    \begin{equation*}
+        r_{\mathrm{d}} = k_{\mathrm{d}} \theta
+    \end{equation*}
+    在等温下达到平衡，吸附速率等于解吸速率
+    \begin{equation*}
+        k_{\mathrm{a}} p(1 - \theta) = k_{\mathrm{d}} \theta
+    \end{equation*}
+    或写作
+    \begin{equation*}
+        \theta = \frac{k_{\mathrm{a}} p}{k_\mathrm{d} + k_{\mathrm{a}} p}
+    \end{equation*}
+    令 $\displaystyle \frac{k_{\mathrm{a}}}{k_{\mathrm{d}}} = a$，则
+    \begin{equation}
+        \theta = \frac{ap}{1+ap} \label{LangmuirAbsorption}
+    \end{equation}
+    \item 从式 (\ref{LangmuirAbsorption}) 可以得出
+    \begin{enumerate}
+        \item 压力足够低或吸附很弱时，
+    \end{enumerate}
+    \item 适合于中等压力
+    \item 缺陷：吸附是多分子层的，吸附分子之间有相互作用
+\end{enumerate}
+
+\subsubsection{Freundlich 吸附等温式}
+
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+\subsubsection{BET 多层吸附公式}
+
+\begin{enumerate}
+    \item 表面已经吸附了一层分子之后，由于被吸附气体本身的范德引力，还可以继续发生多分子层吸附。
+    \item 在等温下有如下关系
+    \begin{equation}
+        V = V_{\mathrm{m}} \frac{Cp}{(p_{\mathrm{s}} - p)\left[1 + (C - 1) \frac{p}{p_{\mathrm{s}}}\right]} \label{BETAbsorption}
+    \end{equation}
+    式 (\ref{BETAbsorption}) 称为\textbf{BET多层吸附公式}，亦称BET二常数公式。
+    \item 为使用方便，把式 (\ref{BETAbsorption}) 改写为
+    \begin{equation}
+        \frac{p}{V(p_{\mathrm{s}} - p)} = \frac1{V_\mathrm{m}C} + \frac{C - 1}{V_\mathrm{m}C} \frac{p}{p_\mathrm{s}}
+    \end{equation}
+    直线斜率为 $\displaystyle \frac{C - 1}{V_\mathrm{m}C}$，截距 $\displaystyle \frac1{V_\mathrm{m}C}$，由此可得 $\displaystyle V_m = \frac1{\text{斜率} + \text{截距}}$。%换行
+    \item 若已知每个分子的截面积，可以求出吸附剂的总表面积和比表面
+    \begin{equation*}
+        S = A_{\mathrm{m}}Ln
+    \end{equation*}
+    若 $V_{\mathrm{m}}$ 的单位为 \si{\centi \meter \cubed}
+\end{enumerate}
+
+\subsubsection{吸附现象的本质——化学吸附和物理吸附}

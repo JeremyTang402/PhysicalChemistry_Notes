@@ -1,0 +1,406 @@
+\section{统计热力学基础}
+
+\subsection{概论 20260422}
+
+\subsubsection{统计热力学的研究方法和目的}
+
+\begin{enumerate}
+    \item 虽然每个粒子都遵守力学定律，但是无法用力学中的微分方程去描述整个系统的运动状态，所以必须用统计学的方法。
+    \item 用统计的方法推求系统的热力学性质，将系统的微观性质与宏观性质联系起来，故统计力学又可称为\textbf{统计热力学}。
+    \item 根据物质结构基本假定及光谱数据，计算\textbf{配分函数}，再求出物质的热力学性质。
+    \item 优点：将系统的微观性质与宏观性质联系起来，对于简单分子计算结果常是令人满意的。
+    局限性：计算时必须假定结构的模型，引入一定的近似性；对大的复杂分子以及凝聚系统，计算尚有困难。
+\end{enumerate}
+%----------%
+\subsubsection{统计系统的分类}
+
+\begin{enumerate}
+    \item 根据统计单位（粒子）是否可以分辨/区分
+    \begin{enumerate}
+        \item 定位系统 localized system：又称定域子系统，粒子彼此可以分辨。
+        \item 非定位系统 non-localized system：又称离域子系统，基本粒子之间不可区分。
+        \item 在总粒子数一定情况下，定位系统的微观状态数要比非定位系统的多得多。
+    \end{enumerate}
+    \item 根据统计单位之间有无相互作用
+    \begin{enumerate}
+        \item （近）独立粒子系统 assembly of independent particles：粒子之间相互作用忽略不计，系统总能量等于各个粒子能量之和。
+        \begin{equation*}
+            U = \sum_{i} N_i E_i
+        \end{equation*}
+        \item 非独立粒子系统：粒子之间的相互作用不能忽略，总能量中应包含粒子间相互作用的位能项。
+        \begin{equation*}
+            U = \sum_{i} N_i E_i + \varepsilon_{\mathrm{p}}(x_1, y_1, z_1, ..., x_N, y_N, z_N)
+        \end{equation*}
+        \item 本章中只讨论独立粒子系统。
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{统计热力学的基本假定}
+
+\begin{enumerate}
+    \item 热力学概率 $\Omega$：系统在一定的宏观状态下可能出现的微观态的总数，$S = k \ln{\Omega}$。
+    \item 统计热力学中的一个基本假定（等概率假定）：对于 $U$, $V$ 和 $N$ 确定的某一宏观系统，任何一个可能出现的微观状态都有相同的数学概率。每一种微观状态 $P$ 出现的数学概率都相等，$\displaystyle P = \frac1{\Omega}$，所提供的微观量在平均值内的贡献都是一样的。
+\end{enumerate}
+
+\subsection{Boltzmann 统计 20260422}
+
+\subsubsection{定位系统的最概然分布}
+
+一个由 $N$ 个可区分的独立粒子组成的宏观系统（$U$，$V$，$N$ 为定值），在量子化的能级上可以有多种不同的分配方式。
+
+\[
+\begin{aligned}
+    \text{能级：}&\varepsilon_1, \varepsilon_2, \varepsilon_3, \cdots, \varepsilon_i \\
+    \text{一种分布方式：}&N_1, N_2, N_3, \cdots, N_i \\
+    \text{另一种分布方式：}&N'_1, N'_2, N'_3, \cdots, N'_i \\
+\end{aligned}
+\]
+
+\noindent 无论哪一种分布方式，都满足以下条件：总粒子数守恒、总能量守恒，即
+\begin{equation}
+    \sum_{i} N_i = N \quad \text{或} \quad \varphi_1 \equiv \sum_{i} N_i - N = 0
+\end{equation}
+\begin{equation}
+    \sum_{i} N_i \varepsilon_i = U \quad \text{或} \quad \varphi_2 \equiv \sum_{i} N_i \varepsilon_i - U = 0
+\end{equation}
+考虑任一种分布方式。根据排列组合公式，实现次分布的方法数 $t$ 为
+\begin{equation}
+    t = \frac{N!}{\prod_{i} N_i!}
+\end{equation}
+\begin{equation}
+    N^*_i = e^{\alpha + \beta \varepsilon_i} \label{MostProbableDistribution}
+\end{equation}
+
+\subsubsection[alpha, beta值的推导]{$\alpha$, $\beta$ 值的推导}
+
+在 (\ref{MostProbableDistribution}) 中，
+
+所以
+\begin{equation*}
+    \left(\frac{\partial S}{\partial U}\right)_{V, N} = -k_{\mathrm{B}} \beta
+\end{equation*}
+代入得
+\begin{equation}
+    N^*_i = N \frac{e^{-\varepsilon_i/k_{\mathrm{B}}T}}{\sum e^{-\varepsilon_i/k_{\mathrm{B}}T}}
+\end{equation}
+
+\subsubsection{Boltzmann 公式的讨论——非定位系统的最概然分布}
+
+\begin{enumerate}
+    \item 简并度
+    \begin{equation}
+        N^*_i = N \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{\sum g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}
+    \end{equation}
+    \item 非定位系统的 Boltzmann 最概然分布——粒子等同性的修正
+    \begin{enumerate}
+        \item 分布的总微观状态数为
+        \begin{equation}
+            \Omega (U, V, N) = \frac1{N!}
+        \end{equation}
+        \begin{equation}
+            N^*_i = N \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{\sum g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}
+        \end{equation}
+        定位系统和非定位系统最概然分布的公式一致，但 $S$ 和 $A$ 表示式不相同。
+        \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Boltzmann 公式的其他形式}
+
+\begin{equation}
+    \frac{N^*_i}{N^*_j} = \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{g_j e^{-\varepsilon_j/k_{\mathrm{B}}T}}
+\end{equation}
+在经典统计中不考虑简并度，则上式可写为
+\begin{equation}
+    \frac{N^*_i}{N^*_j} = \frac{e^{-\varepsilon_i/k_{\mathrm{B}}T}}{e^{-\varepsilon_j/k_{\mathrm{B}}T}} = \exp\left(-\frac{\varepsilon_i - \varepsilon_j}{k_{\mathrm{B}}T}\right)
+\end{equation}
+
+\subsubsection{撷取最大项法及其原理}
+
+\subsection{Bose-Einstein 统计和 Fermi-Dirac 统计}
+
+\subsection{配分函数 20260427}
+
+\subsubsection{配分函数的定义}
+
+\begin{enumerate}
+    \item 令 $\sum g_i e^{-\varepsilon_i/k_{\mathrm{B}}T} \equiv q$，$q$ 称为离子的配分函数。
+    \item 从上式可得
+    \begin{equation}
+        \frac{N_i}{N} = \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{q}
+    \end{equation}
+    \item $q$ 中的任一项 $g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}$ 与 $q$ 之比，等于粒子分配在 $i$ 能级上的分数。
+\end{enumerate}
+
+\subsubsection{配分函数与热力学函数的关系}
+
+\begin{enumerate}
+    \item Helmholtz 自由能
+    
+    根据前式及配分函数的定义，得
+    \begin{equation}
+        A_{\text{非定位}} = 
+    \end{equation}
+    \item 熵
+    
+    可由两个后项相等求出内能的表示式
+    \item 热力学能
+    
+    根据 $U = A + TS$，带入 $A$ 和 $S$，得到
+    \begin{equation}
+        U = A + TS = ... = N k_{\mathrm{B}} T^2
+    \end{equation}
+    \item Gibbs 自由能
+    
+    根据定义 $G = A + pV$，将 $A$，$p$ 值代入，得
+    \begin{equation}
+        G_{\text{非定位}} = -k_{\mathrm{B}} T \ln{\frac{q^N}{N!}} + N
+    \end{equation}
+    \item 焓
+    \begin{equation}
+        H = G + TS = N k_{\mathrm{B}} T V
+    \end{equation}
+    \item 等容热容 $C_V$
+    \begin{equation}
+        C_V = \left(\frac{\partial U}{\partial T}\right)_V = 
+    \end{equation}
+    \item 从以上的表达式可以看出，只要知道配分函数 $q$ 就能求出诸热力学函数。
+    \item 对于定位系统，用同样的方法也可以导出其热力学函数
+    \begin{equation}
+        A_{\text{定位}} = -k_{\mathrm{B}} T \ln{q^N}
+    \end{equation}
+    \item 由上述公式可见无论是定位系统或非定位系统 $U, H, C_V$ 的表示式是一样的，只是在热力学函数 $A, S, G$ 上相差一些常数项。
+\end{enumerate}
+
+\subsubsection{配分函数的分离}
+
+\begin{enumerate}
+    \item 一个分子的能量可以认为是分子整体运动的能量即平动能 ($\varepsilon_{\mathrm{t}}$) 与分子内部运动的能量之和。
+    \item 分子内部运动的能量包括转动能 ($\varepsilon_{\mathrm{r}}$)、振动能 ($\varepsilon_{\mathrm{v}}$)、电子运动的能量 ($\varepsilon_{\mathrm{e}}$) 及核运动的能量 ($\varepsilon_{\mathrm{n}}$)，各能量可看作独立无关。
+    \item 分子处于某能级的总能量等于各种能级之和
+    \item 能级大小次序为
+    \item 各不同能级各有相应的简并度，总的简并度 ($g_i$) 等于各个能级上简并度的乘积。
+    \item 根据配分函数的定义，得
+    \begin{equation*}
+        q = \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_{\mathrm{B}} T}\right)
+    \end{equation*}
+    从数学上可以证明，几个独立变数乘积之和等于各自求和的乘积。于是，上式可以写作
+    \begin{equation}
+        \begin{aligned}
+            q = &\left[\sum_{i} g_{i,\mathrm{t}} \exp\left(-\frac{\varepsilon_{i,\mathrm{t}}}{k_{\mathrm{B}} T}\right)\right] \cdot
+            \left[\sum_{i} g_{i,\mathrm{r}} \exp\left(-\frac{\varepsilon_{i,\mathrm{r}}}{k_{\mathrm{B}} T}\right)\right] \cdot \\
+            &\left[\sum_{i} g_{i,\mathrm{v}} \exp\left(-\frac{\varepsilon_{i,\mathrm{v}}}{k_{\mathrm{B}} T}\right)\right] \cdot
+            \left[\sum_{i} g_{i,\mathrm{e}} \exp\left(-\frac{\varepsilon_{i,\mathrm{e}}}{k_{\mathrm{B}} T}\right)\right] \cdot
+            \left[\sum_{i} g_{i,\mathrm{n}} \exp\left(-\frac{\varepsilon_{i,\mathrm{n}}}{k_{\mathrm{B}} T}\right)\right] \\
+        \end{aligned}
+    \end{equation}
+    如令
+    \begin{equation*}
+        \begin{aligned}
+            \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_{\mathrm{B}} T}\right) \quad \text{平动}
+        \end{aligned}
+    \end{equation*}
+    \begin{equation}
+        q = q_{\mathrm{t}} \cdot q_{\mathrm{r}} \cdot q_{\mathrm{v}} \cdot q_{\mathrm{e}} \cdot q_{\mathrm{n}}
+    \end{equation}
+    配分函数可分离性
+\end{enumerate}
+
+\subsection{各配分函数的求法及其对热力学函数的贡献 20260427 20260429}
+
+\subsubsection{原子核配分函数}
+
+\begin{enumerate}
+    \item 
+    \begin{equation*}
+        \begin{aligned}
+            q_{\mathrm{n}} &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right)... \\
+            &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right) \\
+        \end{aligned}
+    \end{equation*}
+    由于原子核的能级间隔相差很大，所以在通常情况下，上式中的第二项及以后的项都可以忽略不计，即
+    \begin{equation}
+        q_{\mathrm{n}} = g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right)
+    \end{equation}
+     核基态的能量选作零，则上式又可写作
+    \begin{equation}
+        q_{\mathrm{n}} = g_{\mathrm{n},0} = 2s_{\mathrm{n}} + 1
+    \end{equation}
+    式中 $s_{\mathrm{n}}$ 为核自旋量子数。
+    \item 对于多原子分子，核的总配分函数等于各原子的核配分函数的乘积（不是加和），即
+    \item 由于核自旋配分函数与温度、体积无关，所以对热力学能、焓和热容没有贡献，但在熵、 Helmholtz 自由能、 Gibbs 自由能中有相应的贡献。
+\end{enumerate}
+
+\subsubsection{电子配分函数}
+
+\begin{enumerate}
+    \item 
+    一般说来，电子总是处于基态，电子能级的间隔也很大，所以第二项可以略去不计。把最低能态的能量规定为零，则电子配分函数就等于最低能态的简并度，即
+    \begin{equation*}
+        q_{\mathrm{e}} = g_{\mathrm{e},0} = 2j + 1
+    \end{equation*}
+    式中 $j$ 为量子数。
+    \item 由于电子配分函数与温度、体积无关，所以对热力学能、焓和热容没有贡献，但在熵、 Helmholtz 自由能、 Gibbs 自由能中有相应的贡献。
+\end{enumerate}
+
+\subsubsection{平动配分函数}
+
+\begin{enumerate}
+    \item 设粒子的质量为 $m$，在边长为 $a \times b \times c$ 的方盒中运动，根据波动方程可以解出平动能的能量公式为
+    \begin{equation}
+        \varepsilon_{i,\mathrm{t}} = \frac{h^2}{8m} \left(\frac{n_x^2}{a^2} + \frac{n_y^2}{b^2} + \frac{n_z^2}{c^2}\right)
+    \end{equation}
+    \item 当能量为 $\varepsilon_i$ 时，由于 $n_x, n_y, n_z$ 不同而有不同的微观状态数，因此式 (7.80) 中的 $g_{i,\mathrm{t}}$ 是该能级的简并度。在式 (7.84) 中是对所有的 $n_x, n_y, n_z$ 求和，它巳经包括了全部可能的微观状态，因此就不再出现 $g_{i,\mathrm{t}}$ 项了。
+    \item 平动配分函数在不同轴上的可分离性
+    \item 式 (7.84) 由 完全相似的三项组成，只需解其中的一个，其余的可以类推。
+    
+    令
+    \begin{equation*}
+        \frac{h^2}{8m k_{\mathrm{B}} T a^2} = \alpha^2
+    \end{equation*}
+    则
+    \begin{equation*}
+        \sum_{n_x = 1}^{\infty} \exp\left(-\frac{h^2}{8m k_{\mathrm{B}} T a^2} \cdot n_x^2\right)
+    \end{equation*}
+    \begin{equation}
+        q_{\mathrm{t}}
+    \end{equation}
+    \item 平动配分函数对热力学函数的贡献：
+    \begin{equation}
+        A_{\mathrm{t}} = -k_{\mathrm{B}} T \ln{\frac{\left(q_{\mathrm{t}}\right)^N}{N!}}
+    \end{equation}
+    可计算理想气体的平动熵
+\end{enumerate}
+
+\subsubsection{单原子理想气体的热力学函数}
+
+\begin{enumerate}
+    \item 单原子理想气体的分子内部运动没有振动和转动；理想气体和非理想气体都是非定位系统。
+    \item Helmholtz 自由能 $A$
+    \begin{equation}
+        \begin{aligned}
+            A &= -k_{\mathrm{B}} T \ln{\frac{q^N}{N!}} \\
+            &= -k_{\mathrm{B}} T \ln{\left(q_{\mathrm{n}}\right)^N}
+            -k_{\mathrm{B}} T \ln{\left(q_{\mathrm{e}}\right)^N}
+            -k_{\mathrm{B}} T \ln{\frac{\left(q_{\mathrm{t}}\right)^N}{N!}} \\
+        \end{aligned}
+    \end{equation}
+    在讨论热力学变量时，这些量是常量，都可以消去。
+    \item 熵 $S$
+    \item 热力学能 $U$
+    
+    只有平动能对热力学能有贡献。
+    \begin{equation}
+        U = N k_{\mathrm{B}} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} = \frac32 N k_{\mathrm{B}} T
+    \end{equation}
+    \item 定容热容 $C_V$
+    \item 化学式 $\mu$
+    \begin{equation}
+        \begin{aligned}
+            \mu &= \left(\frac{\partial A}{\partial N}\right)_{T,V} \\
+            &= (\varepsilon_{\mathrm{n},0} + \varepsilon_{\mathrm{e},0}) + 1\\
+        \end{aligned}
+    \end{equation}
+    得到理想气体化学势的表示式（第四章）
+    \item 状态方程式
+\end{enumerate}
+
+\subsubsection{转动配分函数}
+
+\begin{enumerate}
+    \item 单原子分子的转动配分函数为零。
+    \item 双原子分子除了质心的整体平动以外，在内部运动中还有转动和振动，彼此影响忽略不计。把转动看作刚性转子绕质心的转动，振动则看作线性谐振子。
+    \item 对于异核双原子分子，转动能级的公式为
+
+    得到
+    \begin{equation}
+        q_{\mathrm{r}} = \int_{0}^{\infty} = \frac{T}{\varTheta_{\mathrm{r}}} = \frac{8\pi^2 I k_{\mathrm{B}} T}{h^2}
+    \end{equation}
+    \item 对称数 $\sigma$ 是分子经过刚性转动一周后，所产生的不可分辨的几何位置数。对于同核双原子分子，$\sigma = 2$，故其配分函数写作
+    \begin{equation}
+        q_{\mathrm{r}} = \frac{8\pi^2 I k_{\mathrm{B}} T}{\sigma h^2}
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{振动配分函数}
+
+\begin{enumerate}
+    \item 双原子分子只有一种振动频率，并可看做简谐振动。
+    
+    分子振动能为
+    \begin{equation}
+        \varepsilon_{\mathrm{v}} = \left(v + \frac12\right) h \nu
+    \end{equation}
+    式中 $\nu$ 是振动频率；$v$ 是振动量子数，其值为非负整数。
+
+    振动特征温度
+    \begin{equation}
+        \varTheta_{\mathrm{v}} = \frac{h \nu}{k_\mathrm{B}}
+    \end{equation}
+    在低温时，……
+    \begin{equation}
+        q_{\mathrm{v}} = \exp\left(-\frac12 \frac{h \nu}{k_\mathrm{B} T}\right) \cdot \frac1{1 - \mathrm{e}^{-h \nu / k_{\mathrm{B}} T}}
+    \end{equation}
+    \item 对于多原子分子，考虑自由度
+    \begin{equation}
+        f_{\mathrm{v}} = 3n - f_{\mathrm{t}} - f_{\mathrm{r}}
+    \end{equation}
+    线性：$f_{\mathrm{v}} = 3n - 3 - 2$
+    
+    非线性：$f_{\mathrm{v}} = 3n - 3 - 3$
+\end{enumerate}
+
+\subsection{晶体的热容问题}
+
+\subsection{分子的全配分函数 20260429}
+
+把上述讨论过的几种配分函数表示式合并起来，得到分子的全配分函数。
+
+\begin{equation}
+    \begin{aligned}
+        q_{\text{总}} = \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_{\mathrm{B}} T}\right)
+    \end{aligned}
+\end{equation}
+对于单原子分子，有
+\begin{equation}
+    q_{\text{总}} = 
+    \left[g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right)\right] \cdot
+    \left[g_{\mathrm{e},0} \exp\left(-\frac{\varepsilon_{\mathrm{e},0}}{k_{\mathrm{B}} T}\right)\right] \cdot
+    \left[\frac{(2\pi m k_{\mathrm{B}} T)^{3/2}}{h^3} V\right]
+\end{equation}
+
+\begin{example} % 7.3
+    设某分子的一个能级的能量和简并度分别为 $\varepsilon_1 = \qty{6.1E-21}{\joule}$，$g_1 = 3$，另一个能级的能量和简并度分别为
+\end{example}
+
+\begin{example} % 7.4
+    设有一个由极大数目的三维平动子组成的粒子系统，运动于边长为 的立方容器内 ,系统的体积、粒子质拭和温度的关系为
+\end{example}
+
+\subsection[用配分函数计算 delta G 和反应的平衡常数 20260506]{用配分函数计算 $\Delta_{\mathrm{r}}G_{\mathrm{m}}^{\circ}$ 和反应的平衡常数 20260506}
+
+\begin{enumerate}
+    \item 化学平衡的计算在统计力学中归结为计算粒子的各种运动状态和能量的问题，而配分函数正是反映了粒子的各种运动状态和能量的分布。
+    \item 由于粒子之间的作用力是十分复杂的，因此，只能引用近独立粒子系统的一些结果，即只处理理想系统。
+\end{enumerate}
+
+\subsubsection{化学平衡系统的公共能量标度}
+
+\begin{enumerate}
+    \item 计算粒子的配分函数时，曾规定不同粒子各自的各种运动形态的基态作为选取能值的参考。
+    \item 当几种物质共同存在时，必须有一个公共的能量标度。
+    \item A，B两种分子各有自己的能量坐标。当振动、转动都为最低能级（$v = 0, J = 0$）时，分子的能量 $\varepsilon_{\mathrm{A}}$ 和 $\varepsilon_{\mathrm{B}}$ 都规定为零。若采用公共起点，A，B分子的能量分别为 $\varepsilon_0(A)$ 和 $\varepsilon_0(B)$。
+    \item 常选择处在 \qty{0}{\kelvin} 的能级作为最低能级。因此，$U_0$ 就是 $N$ 个分子在 \qty{0}{\kelvin} 时的能量。
+    \item 当分子混合并且发生了化学变化时，必须使用公共能量标度。
+\end{enumerate}
+
+\subsubsection{从自由能函数计算平衡常数}
+
+\begin{enumerate}
+    \item 将式子重排，$\displaystyle \frac{G(T)-U_0}{T}$ 称为\textbf{自由能函数}。
+    \item \qty{0}{\kelvin} 时 $U_0 = H_0$，（$H = U + pV = U + nRT$）。
+    \item 可以从自由能函数求得配分函数，反之亦然。
+    \item 可用自由能函数计算反应的平衡常数。
+    \item $\Delta_{\mathrm{r}}U_{\mathrm{m}}^{\circ}$ 的求法
+\end{enumerate}
+
+\subsubsection{热函函数}

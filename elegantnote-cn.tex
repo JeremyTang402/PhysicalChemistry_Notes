@@ -1,5 +1,5 @@
 %!TEX program = xelatex
-\documentclass[cn,blue,12pt,normal]{elegantnote}
+\documentclass[cn,blue,10pt,normal]{elegantnote}
 \title{物理化学}
 
 \author{19Q24119}
@@ -10,19 +10,22 @@
 
 \usepackage{array}
 \usepackage{siunitx}
-\usepackage{mhchem}
+\usepackage{chemformula}
 \usepackage{chemfig}
 \usepackage{enumitem}
 \usepackage{extarrows}
-%\usepackage{chemmacros}
+\usepackage{verbatim}
 
 \sisetup{
   per-mode = reciprocal,
   inter-unit-product = \cdot
 }
 
-\let\oldce\ce
-\renewcommand{\ce}[1]{\text{\oldce{#1}}}
+\renewcommand*\printatom[1]{\ch{#1}}
+
+\setchemfig{atom sep=2em} %chemfig键长
+
+\sisetup{range-units = single, range-phrase = {$\sim$}}
 
 \begin{document}
 
@@ -31,7 +34,13 @@
 %\centerline{\includegraphics[width=0.3\textwidth]{logo-SEU.png}}
 \centerline{\includegraphics[width=0.35\textwidth]{logo-Chem.png}}
 \include{Chapter1}
+\include{Chapter7}
 \include{Chapter8}
 \include{Chapter9}
+\include{Chapter10}
+\include{Chapter11}
+\include{Chapter12}
+\include{Chapter13}
+\include{Chapter14}
 
 \end{document}
