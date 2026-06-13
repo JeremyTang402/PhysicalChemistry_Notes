@@ -21,11 +21,13 @@
   inter-unit-product = \cdot
 }
 
-\renewcommand*\printatom[1]{\ch{#1}}
+\setchemformula{format=\fontfamily{cmr}\selectfont}
 
-\setchemfig{atom sep=2em} %chemfig键长
+\setchemfig{atom sep=1.5em, bond join=true, fixed length=true} 
 
 \sisetup{range-units = single, range-phrase = {$\sim$}}
+
+\newcommand{\dsum}{\displaystyle\sum}
 
 \begin{document}
 

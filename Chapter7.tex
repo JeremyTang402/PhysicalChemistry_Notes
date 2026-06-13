@@ -11,23 +11,23 @@
     \item 优点：将系统的微观性质与宏观性质联系起来，对于简单分子计算结果常是令人满意的。
     局限性：计算时必须假定结构的模型，引入一定的近似性；对大的复杂分子以及凝聚系统，计算尚有困难。
 \end{enumerate}
-%----------%
+
 \subsubsection{统计系统的分类}
 
 \begin{enumerate}
     \item 根据统计单位（粒子）是否可以分辨/区分
     \begin{enumerate}
-        \item 定位系统 localized system：又称定域子系统，粒子彼此可以分辨。
-        \item 非定位系统 non-localized system：又称离域子系统，基本粒子之间不可区分。
+        \item \textbf{定位系统}：又称定域子系统，粒子彼此可以分辨。
+        \item \textbf{非定位系统}：又称离域子系统，基本粒子之间不可区分。
         \item 在总粒子数一定情况下，定位系统的微观状态数要比非定位系统的多得多。
     \end{enumerate}
     \item 根据统计单位之间有无相互作用
     \begin{enumerate}
-        \item （近）独立粒子系统 assembly of independent particles：粒子之间相互作用忽略不计，系统总能量等于各个粒子能量之和。
+        \item \textbf{（近）独立粒子系统}：粒子之间相互作用忽略不计，系统总能量等于各个粒子能量之和。
         \begin{equation*}
             U = \sum_{i} N_i E_i
         \end{equation*}
-        \item 非独立粒子系统：粒子之间的相互作用不能忽略，总能量中应包含粒子间相互作用的位能项。
+        \item \textbf{非独立粒子系统}：粒子之间的相互作用不能忽略，总能量中应包含粒子间相互作用的位能项。例如非理想气体。
         \begin{equation*}
             U = \sum_{i} N_i E_i + \varepsilon_{\mathrm{p}}(x_1, y_1, z_1, ..., x_N, y_N, z_N)
         \end{equation*}
@@ -38,82 +38,127 @@
 \subsubsection{统计热力学的基本假定}
 
 \begin{enumerate}
-    \item 热力学概率 $\Omega$：系统在一定的宏观状态下可能出现的微观态的总数，$S = k \ln{\Omega}$。
-    \item 统计热力学中的一个基本假定（等概率假定）：对于 $U$, $V$ 和 $N$ 确定的某一宏观系统，任何一个可能出现的微观状态都有相同的数学概率。每一种微观状态 $P$ 出现的数学概率都相等，$\displaystyle P = \frac1{\Omega}$，所提供的微观量在平均值内的贡献都是一样的。
+    \item 热力学概率 $\Omega$：系统在一定的宏观状态下可能出现的微观态的总数，$S = k \ln{\Omega}$。$S$ 和 $\omega$ 都是 $(U,V,N)$ 的函数。
+    \item 统计热力学基本假定（等概率假定）：对于 $U$, $V$ 和 $N$ 确定的某一宏观系统，任何一个可能出现的微观状态都有相同的数学概率。每一种微观状态 $P$ 出现的数学概率都相等，$P = \dfrac1{\Omega}$，所提供的微观量在平均值内的贡献都是一样的。
 \end{enumerate}
 
 \subsection{Boltzmann 统计 20260422}
 
 \subsubsection{定位系统的最概然分布}
 
-一个由 $N$ 个可区分的独立粒子组成的宏观系统（$U$，$V$，$N$ 为定值），在量子化的能级上可以有多种不同的分配方式。
-
-\[
-\begin{aligned}
+一个由 $N$ 个可区分的独立粒子组成的宏观系统（$U, V, N$ 为定值），在量子化的能级上有多种不同分配方式。
+$$\begin{aligned}
     \text{能级：}&\varepsilon_1, \varepsilon_2, \varepsilon_3, \cdots, \varepsilon_i \\
     \text{一种分布方式：}&N_1, N_2, N_3, \cdots, N_i \\
     \text{另一种分布方式：}&N'_1, N'_2, N'_3, \cdots, N'_i \\
-\end{aligned}
-\]
-
-\noindent 无论哪一种分布方式，都满足以下条件：总粒子数守恒、总能量守恒，即
+\end{aligned}$$
+无论哪一种分布方式，都满足以下条件：总粒子数守恒、总能量守恒，即
 \begin{equation}
     \sum_{i} N_i = N \quad \text{或} \quad \varphi_1 \equiv \sum_{i} N_i - N = 0
+    \label{DistributionParticleNumberConservation}
 \end{equation}
 \begin{equation}
     \sum_{i} N_i \varepsilon_i = U \quad \text{或} \quad \varphi_2 \equiv \sum_{i} N_i \varepsilon_i - U = 0
+    \label{DistributionEnergyConservation}
 \end{equation}
+推导过程略。
+\begin{comment}
 考虑任一种分布方式。根据排列组合公式，实现次分布的方法数 $t$ 为
 \begin{equation}
     t = \frac{N!}{\prod_{i} N_i!}
 \end{equation}
+在式 \eqref{DistributionParticleNumberConservation} 和 \eqref{DistributionEnergyConservation} 条件下有不同分布方式。各分布方式总微观状态数
 \begin{equation}
-    N^*_i = e^{\alpha + \beta \varepsilon_i} \label{MostProbableDistribution}
+    \Omega = \sum_{\substack{\sum_{i} N_i = N \\ \sum_{i} N_i \varepsilon_i = U}} t_i = \sum_{\substack{\sum_{i} N_i = N \\ \sum_{i} N_i \varepsilon_i = U}} \frac{N!}{\prod_{i} N_i!}
 \end{equation}
+\end{comment}
+可得
+\begin{equation}
+    N^*_i = e^{\alpha + \beta \varepsilon_i}
+    \label{MostProbableDistribution}
+\end{equation}
+
+当 $N_i$ 适合于上式的一种分布就是微观状态数最多的一种分布，称为\textbf{最概然分布}。用“*”以示区别。
 
 \subsubsection[alpha, beta值的推导]{$\alpha$, $\beta$ 值的推导}
 
-在 (\ref{MostProbableDistribution}) 中，
-
-所以
 \begin{equation*}
-    \left(\frac{\partial S}{\partial U}\right)_{V, N} = -k_{\mathrm{B}} \beta
+    \alpha = \ln{N} - \ln{\sum_{i} \mathrm{e}^{\beta \varepsilon_i}}
 \end{equation*}
-代入得
 \begin{equation}
-    N^*_i = N \frac{e^{-\varepsilon_i/k_{\mathrm{B}}T}}{\sum e^{-\varepsilon_i/k_{\mathrm{B}}T}}
+    \beta = -\frac1{k_\mathrm{B} T}
+\end{equation}
+推导过程略。
+代入式 \eqref{MostProbableDistribution}，得 Boltzmann 最概然分布公式：
+\begin{equation}
+    N^*_i = N \frac{e^{-\varepsilon_i / k_{\mathrm{B}} T}}{\dsum_{i} e^{-\varepsilon_i / k_{\mathrm{B}} T}}
+\end{equation}
+代入推导式得
+\begin{equation}
+    S = k_\mathrm{B} N \ln{\sum_{i} \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}} + \frac{U}{T}
+\end{equation}
+由
+\begin{equation*}
+    A = U - T S
+\end{equation*}
+得
+\begin{equation}
+    A = -k_\mathrm{B} N T \ln{\sum_{i} \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}}
 \end{equation}
 
 \subsubsection{Boltzmann 公式的讨论——非定位系统的最概然分布}
 
 \begin{enumerate}
     \item 简并度
+    
+    上述推导过程认为能级是非简并的，每个能级只对应一个量子状态。实际上每个能级有若干不同量子状态存在。一个能级可能有的微观状态数称为该能级的\textbf{简并度} $g_i$。推导过程略，得到定位系统的 $N^*_i$、$S$ 和 $A$ 分别为 %Boltzmann推导时认为气体为定位系统
     \begin{equation}
-        N^*_i = N \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{\sum g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}
+        N^*_i = N \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{\dsum_{i} g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}
     \end{equation}
+    \begin{equation}
+        S_{\text{定位}} = k_\mathrm{B} N \ln{\sum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}} + \frac{U}{T}
+    \end{equation}
+    \begin{equation}
+        A_{\text{定位}} = -k_\mathrm{B} N T \ln{\sum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}}
+    \end{equation}
+    只是多了相应的 $g_i$ 项。
     \item 非定位系统的 Boltzmann 最概然分布——粒子等同性的修正
-    \begin{enumerate}
-        \item 分布的总微观状态数为
-        \begin{equation}
-            \Omega (U, V, N) = \frac1{N!}
+    
+    对于非定位系统作如下修正：系统是 $N$ 个不可区分的分子，分布的总微观状态数为
+    \begin{equation}
+        \Omega (U,V,N) = \frac1{N!} \sum_{\substack{\sum_{i} N_i = N \\ \sum_{i} N_i \varepsilon_i = U}} N! \prod_{i} \frac{{g_i}^{N_i}}{N_i!}
         \end{equation}
-        \begin{equation}
-            N^*_i = N \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{\sum g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}
-        \end{equation}
-        定位系统和非定位系统最概然分布的公式一致，但 $S$ 和 $A$ 表示式不相同。
-        \end{enumerate}
+    即在定位系统的微观状态数上除以 $N!$。
+
+    用同样方法可推导出非定位系统的 $N^*_i$、$S$ 和 $A$ 分别为
+    \begin{equation}
+        N^*_i = N \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{\dsum_{i} g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}
+    \end{equation}
+    \begin{equation}
+        S_{\text{非定位}} = k_\mathrm{B} \ln{\frac{\left(\dsum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}\right)^N}{N!}} + \frac{U}{T}
+    \end{equation}
+    \begin{equation}
+        A_{\text{非定位}} = -k_\mathrm{B} T \ln{\frac{\left(\dsum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}\right)^N}{N!}}
+    \end{equation}
+    定位系统和非定位系统最概然分布的公式一致，但 $S$ 和 $A$ 表示式不相同。本章中以讨论气体和气相反应为主，一般都是非定位系统。
 \end{enumerate}
 
 \subsubsection{Boltzmann 公式的其他形式}
-
-\begin{equation}
-    \frac{N^*_i}{N^*_j} = \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{g_j e^{-\varepsilon_j/k_{\mathrm{B}}T}}
-\end{equation}
-在经典统计中不考虑简并度，则上式可写为
-\begin{equation}
-    \frac{N^*_i}{N^*_j} = \frac{e^{-\varepsilon_i/k_{\mathrm{B}}T}}{e^{-\varepsilon_j/k_{\mathrm{B}}T}} = \exp\left(-\frac{\varepsilon_i - \varepsilon_j}{k_{\mathrm{B}}T}\right)
-\end{equation}
-
+\begin{enumerate}
+    \item 将两个能级上的粒子数进行比较
+    \begin{equation}
+        \frac{N^*_i}{N^*_j} = \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{g_j e^{-\varepsilon_j/k_{\mathrm{B}}T}}
+    \end{equation}
+    \item 在经典统计中不考虑简并度，则上式可写为（通常略去上标）
+    \begin{equation}
+        \frac{N_i}{N_j} = \frac{e^{-\varepsilon_i / k_{\mathrm{B}} T}}{e^{-\varepsilon_j/k_{\mathrm{B}}T}} = \exp\left(-\frac{\varepsilon_i - \varepsilon_j}{k_{\mathrm{B}}T}\right)
+    \end{equation}
+    \item 假定最低能级 $\varepsilon_0$，在该能级上粒子数 $N_0$，上式可以写作
+    \begin{equation}
+        N_i = N_0 \mathrm{e}^{-\Delta \varepsilon_i / k_\mathrm{B} T}
+    \end{equation}
+\end{enumerate}
+%----------%
 \subsubsection{撷取最大项法及其原理}
 
 \subsection{Bose-Einstein 统计和 Fermi-Dirac 统计}
@@ -123,12 +168,12 @@
 \subsubsection{配分函数的定义}
 
 \begin{enumerate}
-    \item 令 $\sum g_i e^{-\varepsilon_i/k_{\mathrm{B}}T} \equiv q$，$q$ 称为离子的配分函数。
+    \item 令 $\sum g_i e^{-\varepsilon_i / k_{\mathrm{B}} T} \equiv q$，$q$ 称为离子的配分函数。
     \item 从上式可得
     \begin{equation}
-        \frac{N_i}{N} = \frac{g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}}{q}
+        \frac{N_i}{N} = \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{q}
     \end{equation}
-    \item $q$ 中的任一项 $g_i e^{-\varepsilon_i/k_{\mathrm{B}}T}$ 与 $q$ 之比，等于粒子分配在 $i$ 能级上的分数。
+    \item $q$ 中的任一项 $g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}$ 与 $q$ 之比，等于粒子分配在 $i$ 能级上的分数。
 \end{enumerate}
 
 \subsubsection{配分函数与热力学函数的关系}
@@ -249,9 +294,9 @@
     \begin{equation}
         \varepsilon_{i,\mathrm{t}} = \frac{h^2}{8m} \left(\frac{n_x^2}{a^2} + \frac{n_y^2}{b^2} + \frac{n_z^2}{c^2}\right)
     \end{equation}
-    \item 当能量为 $\varepsilon_i$ 时，由于 $n_x, n_y, n_z$ 不同而有不同的微观状态数，因此式 (7.80) 中的 $g_{i,\mathrm{t}}$ 是该能级的简并度。在式 (7.84) 中是对所有的 $n_x, n_y, n_z$ 求和，它巳经包括了全部可能的微观状态，因此就不再出现 $g_{i,\mathrm{t}}$ 项了。
+    \item 当能量为 $\varepsilon_i$ 时，由于 $n_x, n_y, n_z$ 不同而有不同的微观状态数，因此式 (7.80) 中的 $g_{i,\mathrm{t}}$ 是该能级的简并度。在式 (7.84) 中是对所有的 $n_x, n_y, n_z$ 求和，它已经包括了全部可能的微观状态，因此就不再出现 $g_{i,\mathrm{t}}$ 项了。
     \item 平动配分函数在不同轴上的可分离性
-    \item 式 (7.84) 由 完全相似的三项组成，只需解其中的一个，其余的可以类推。
+    \item 式 (7.84) 由完全相似的三项组成，只需解其中的一个，其余的可以类推。
     
     令
     \begin{equation*}
@@ -309,6 +354,14 @@
 \begin{enumerate}
     \item 单原子分子的转动配分函数为零。
     \item 双原子分子除了质心的整体平动以外，在内部运动中还有转动和振动，彼此影响忽略不计。把转动看作刚性转子绕质心的转动，振动则看作线性谐振子。
+    \item 转动能级的公式为
+    \begin{equation*}
+        \varepsilon_\mathrm{r} = J (J + 1) \frac{h^2}{8\pi^2 I} \quad J = 0, 1, 2, \cdots
+    \end{equation*}
+    $J$ 是转动能级的量子数；$I$ 是转动惯量。对于双原子分子，转动惯量有
+    \begin{equation*}
+        I = \frac{m_1 m_2}{m_1 + m_2} r^2
+    \end{equation*}
     \item 对于异核双原子分子，转动能级的公式为
 
     得到

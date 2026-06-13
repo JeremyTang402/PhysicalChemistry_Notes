@@ -3,8 +3,15 @@
 
 \begin{enumerate}
     \item 把一种或几种物质分散在另一种物质中，构成分散系统。分散系统中被分散的物质称为\textbf{分散相}，分散分散相的物质称为\textbf{分散介质}。
-    \item 按分散相粒子大小，常有三种分散系统：\textbf{分子（离子）分散系统}（$r < \qty{1}{\nano\meter}$）、\textbf{胶体分散系统}（$\qty{1}{\nano\meter} \leq r \leq \qty{100}{\nano\meter}$） 和 \textbf{粗分散系统}（$r > \qty{100}{\nano\meter}$）。
+    \item 按分散相粒子大小，分散系统区分为：
+    \begin{enumerate}
+        \item \textbf{分子（离子）分散系统}（$r < \qty{1}{\nano\meter}$），均匀单相。
+        \item \textbf{胶体分散系统}（$\qty{1}{\nano\meter} \leq r \leq \qty{100}{\nano\meter}$），目测均匀，实为多相不均匀系统。
+        \item \textbf{粗分散系统}（$r > \qty{100}{\nano\meter}$），目测不均匀，放置后沉淀或分层。
+    \end{enumerate}
+    \item 在胶体和表面化学中所涉及的超细微粒，基本上应归属于介观领域。
 \end{enumerate}
+
 \subsection{胶体和胶体的基本特性 20260527 20260601}
 
 \subsubsection{分散系统的分类}
@@ -12,23 +19,28 @@
 \begin{enumerate}
     \item 胶体系统包含性质不同的两大类
     \begin{enumerate}
-        \item 憎液溶胶：难溶物分散在分散介质中。不稳定，易被破坏而聚沉，聚沉后往往不能恢复原态。
+        \item 憎液溶胶
+        \begin{enumerate}
+            \item 难溶物分散在分散介质中，粒子由大数目分子构成，大小不等，在\qtyrange{1}{100}{\nano\meter}之间
+            \item 介质间有明显的相界面，多相不均匀性
+            \item 易聚结的不稳定性，表面自由能高，是热力学不稳定系统；自动聚结为大粒子，往往不能复原。
+        \end{enumerate}
         \item 亲液溶胶
+        \begin{enumerate}
+            \item 大（高）分子化合物溶液，分子大小达到胶体范围
+            \item 具有胶体一些特性，扩散慢、不通过半透膜、Tyndall 效应
+            \item 均相溶液，热力学稳定、可逆
+        \end{enumerate}
     \end{enumerate}
-    \item 溶胶系统也可按分散相和分散介质的聚集状态分类。
+    \item 按分散相和分散介质的聚集状态分类
     \begin{enumerate}
         \item 液体作为分散介质，液溶胶：液固、液液、液气溶胶
         \item 固体作为分散介质，固溶胶：固固、固液、固气溶胶
         \item 气体作为分散介质，气溶胶：气固、气液溶胶，没有气气溶胶（单相均一体系）
     \end{enumerate}
-    \item 憎液溶胶的特性
-    \begin{enumerate}
-        \item 特有的分散程度：粒子大小在\qtyrange{1}{100}{\nano\meter}之间
-        \item 多相不均匀性：介质间有明显的相界面
-        \item 易聚结不稳定性：表面自由能高，是热力学不稳定系统，自动聚结为大粒子。
-    \end{enumerate}
+    \item 只有典型的憎液溶胶才能全面地表现出胶体的特性。
 \end{enumerate}
-
+%----------%
 \subsubsection{胶团的结构}
 
 \begin{enumerate}
@@ -118,7 +130,7 @@
     \end{equation*}
 \end{enumerate}
 
-\subsection{溶胶的动力性质 20260601}
+\subsection{溶胶的动力性质 20260601 20260603}
 
 \begin{enumerate}
     \item 动力性质
@@ -155,4 +167,244 @@
         = \frac{D A \left[\dfrac{\mathrm{d}}{\mathrm{d}x} \left(\dfrac{\mathrm{d}c}{\mathrm{d}x}\right) \mathrm{d}x\right]}{A \cdot \mathrm{d}x}
         = D \frac{\mathrm{d^2}c}{\mathrm{d}x^2}
     \end{equation}
+    \item \textbf{Einstein-Brown 位移方程}
+    \begin{equation}
+        D = \frac{\overline{x^2}}{2t}
+    \end{equation}
+    带入运动公式（），得
+    \begin{equation}
+        D = \frac{R T}{L} \cdot \frac1{6\pi \eta r}
+    \end{equation}
+    可计算粒子的半径 $r$。
+\end{enumerate}
+
+\subsubsection{沉降和沉降平衡}
+
+\begin{enumerate}
+    \item 胶粒一方面受到重力吸引而下降，一方面由于 Brown 运动促使浓度趋于均一。两种效应相反的力相等时，粒子的分布达到平衡，形成浓度梯度，状态称为\textbf{沉降平衡}。
+    \item 沉降平衡后，溶胶浓度随高度分布的情况可用高度分布定律表示。设容器截面积 $A$，粒子球形半径为 $r$，粒子与介质的密度分别为 $\rho_{\text{粒子}}$ 和 $\rho_{\text{介质}}$，……
+    \begin{equation}
+        \frac{N_1}{N_2} = \exp\left[-\frac43 \pi r^3 (\rho_{\text{粒子}} - \rho_{\text{介质}}) g L (x_2 - x_1) \frac1{R T}\right]
+    \end{equation}
+    此式即为\textbf{粒子的高度分布公式}。
+\end{enumerate}
+
+\subsection{溶胶的光学性质 20260603}
+
+\subsubsection{Tyndall 效应好 Rayleigh 公式}
+
+\begin{enumerate}
+    \item \textbf{Tyndall 效应}：令会聚光通过溶胶，从侧面可看到溶胶中发光圆锥体。在不同方向观察光柱有不同的颜色。
+    \item 光线射入分散系统是，可能发生发生三种情况：光的反射或折射、光的散射、光的吸收。
+    \begin{enumerate}
+        \item % slide
+    \end{enumerate}
+    \item \textbf{Rayleigh 公式}
+    \begin{equation}
+        I = \frac{24\pi^2 A^2 \nu V^2}{\lambda^4}\left(\frac{n^2_1 - n^2_2}{n^2_1 + 2n^2_2}\right)^2
+        \label{RayleighEquation}
+    \end{equation}
+    式中 $A$ 为入射光的振幅； $\lambda$ 为入射光的波长；$\nu$ 为单位体积中的粒子数；$V$ 为每个粒子的体积；$n_1$ 和 $n_2$ 分别为分散相和分散介质的折射率。适用于不导电、粒子半径 $\leq$ \qty{47}{\nano\meter} 的系统。
+    \item 蓝光波长短，散射作用强，故天空为蓝色。
+    \item 当其他条件均相同时，式 \eqref{RayleighEquation} 可写成
+    \begin{equation*}
+        I = K \frac{\nu V^2}{\lambda^4}
+    \end{equation*}
+    若有两种浓度相同的溶胶，从式 () 可以得
+   \begin{subequations}
+        \label{eq:group_14.1}
+        \begin{align}
+            a &= b + c \label{eq:14.1_a} \\
+            d &= e + f \label{eq:14.1_b}
+        \end{align}
+    \end{subequations}
+\end{enumerate}
+
+\subsubsection{超显微镜的基本原理和粒子大小的测定}
+
+\subsection{溶胶的电学性质 202060603}
+
+\subsubsection{电动现象}
+
+\begin{enumerate}
+    \item slide
+    \item 固体表面上产生定位离子的原因
+    \begin{enumerate}
+        \item 吸附
+        \item 解离
+        \item 同晶置换
+        \item 溶解量的不均衡
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{电泳}
+
+\begin{enumerate}
+    \item \textbf{电泳}：在外电场作用下带有电荷的溶胶粒子做定向迁移。
+    \item 界面移动电泳仪：根据通电时间和页液面升高和下降的刻度……
+\end{enumerate}
+
+\subsubsection{电渗}
+
+\begin{enumerate}
+    \item \textbf{电渗}：在外加电场下，可以观察到分散介质会通过多孔性物质而移动，即固相不移动而液相移动。
+\end{enumerate}
+
+\subsubsection{沉降电势和流动电势}
+
+\begin{enumerate}
+    \item \textbf{沉降电势}：在外力作用下（主要是重力），分散相粒子在分散介质中迅速沉降，则在液体介质的表面层与其内层之间会产生电势差，是电泳作用的伴随现象。
+    \item \textbf{流动电势}：在外力作用下（例如加压），使液体经毛细管或多孔塞时，液体介质相对于静止带电荷表面流动而产生的电势差，是电渗作用的伴随现象。
+    \item 四种电动现象中，以电泳和电渗最为重要。沉降电势实验难测。
+\end{enumerate}
+
+\subsection[双电层理论和 zeta 电势 20260603]{双电层理论和 $\zeta$ 电势 20260603}
+
+\begin{enumerate}
+    \item Helmholtz 平板双电层模型：带电荷指点的表面电荷和与带相反电荷的离子构成平行的两层，称为 \textbf{双电层}。
+    \item Gouy 和 Chapman 扩散双电层理论：由于静电吸引作用和热运用两种效应的结果，在溶液中与固体表面离子电荷相反的离子只有一部分紧密排列在固体表面上，另一部分离子与固体表面的距离从紧密层一直分散到本体溶液之中。
+    \item 移动切动面 $AB$ 与溶液本体之间的电势差称为 \textbf{电动电势} 或 $\boldsymbol{\zeta}$ \textbf{电势}。
+    \item Stern 模型：紧密层有 \qtyrange{1}{2}{} 个分子层厚（Stern 层），紧密吸附在表面上，\textbf{特性吸附}。
+    \item $\zeta$ 电势
+\end{enumerate}
+
+\subsection{溶胶的稳定性和聚沉作用 20206068}
+
+\subsubsection{溶胶的稳定性}
+
+\begin{enumerate}
+    \item 动力学稳定性：溶胶粒子子小，Brown 运动剧烈，在重力场中不易沉降。
+    \item 抗聚结稳定性：胶粒之间有相互吸引的能量 $V_\mathrm{a}$ 和相互排斥的能量 $V_\mathrm{r}$。粒子聚结需要克服势垒。
+    \item 溶剂化层的影响：胶粒彼此接近，溶剂化膜挤压变形，力图恢复原来定向排列，出现弹性阻碍胶粒彼此接近。
+\end{enumerate}
+
+\subsubsection{影响聚沉作用的一些因素}
+
+\begin{enumerate}
+    \item 电解质对于溶胶聚沉作用的影响
+    \begin{enumerate}
+        \item \textbf{聚沉值}：使一定量溶胶在一定时间内完全聚沉所需电解质的最小浓度。
+        \item 聚沉能力是聚沉值的倒数。
+        \item 实验结果总结如下规律：
+        \begin{enumerate}
+            \item 聚沉能力主要取决于与胶粒带相反电荷的离子的价数。\textbf{Schulze-Hardy 规则}：聚沉值与异电性离子价数的六次方成反比。
+            \item 价数相同的离子聚沉能力有不同。…… \textbf{感胶离子序}。
+            \item 有机化合物的离子都具有很强的聚沉能力（与强吸附能力有关）。
+            \item 电解质的聚沉作用是阴阳离子作用的总和。
+            \item 不规则聚沉：溶胶中加入少量电解质可以使溶胶聚沉，电解质浓度升高，沉淀有重新分散成溶胶，胶粒所带电荷相反；若浓度再升高，可再次沉淀。不规则聚沉是胶体粒子对高价异号离子的强烈吸附的结果。
+        \end{enumerate}
+    \end{enumerate}
+    \item 胶体系统之间的相互作用
+    \begin{enumerate}
+        \item 将溶胶粒子带相反电荷的两种溶胶互相混合，用量恰能使所带总电荷量相等，可看成加入电解质的特殊情况。
+        \item 在憎液溶胶中加入大分子溶液
+        \begin{enumerate}
+            \item 加入大分子溶液的量足够多时，会保护溶胶不聚沉，常用金值来表示大分子溶液对金溶胶的保护能力（不致聚沉所需高分子的最少质量）。金值越小，表明高分子保护剂的能力越强。
+            \item 在加入少量大分子溶液时，会促使溶胶的聚沉，这种现象称为\textbf{敏化作用}。胶粒粘附在大分子上，大分子起桥梁作用，联系胶粒。
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{胶体稳定性的 DLVO 理论大意}
+
+\begin{enumerate}
+    \item 给出计算胶体质点间排斥能及吸引能的方法，并据此对憎液胶体的稳定性进行了定量处理，得出了聚沉值与反号离子电价之间的关系式，从理论上阐明了 Schulze-Hardy 规则。
+\end{enumerate}
+
+\subsubsection{大分子化合物对溶胶的絮凝和稳定作用}
+
+\begin{enumerate}
+    \item 大分子化合物对溶胶的絮凝作用
+    \begin{enumerate}
+        \item \textbf{絮凝（或桥联）作用}：在溶胶内加入极少量的可溶性高分子化合物，可导致溶胶迅速沉淀成疏松的棉絮状，这类沉淀称为\textbf{絮凝物}。
+        \item 原理：吸附了溶胶粒子以后，高分子化合物本身的链段旋转和运动，将固体粒子聚集在一起而产生沉淀。
+        \item 特点
+        \begin{enumerate}
+            \item 起絮凝作用的高分子化合物一般要具有链状结构
+            \item 任何絮凝剂的加入量都有一最佳值
+            \item 高分子的分子质量越大，絮凝效率也越高
+            \item 高分子化合物基团的性质对絮凝效果有十分重要的影响
+            \item 絮凝过程与絮凝物的大小、结构、搅拌的速率和强度等都有关系
+        \end{enumerate}
+    \end{enumerate}
+    \item 大分子化合物对溶胶的稳定作用
+    \begin{enumerate}
+        \item 保护作用：在溶胶中加入一定量的高分子化合物或缔合胶体，能显著提高溶胶对电解质的稳定性。
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{乳状液 202060608}
+
+\subsubsection{两种乳状液——O/W 型和 W/O 型乳状液}
+
+\begin{enumerate}
+    \item 乳状液是由两种液体所构成的分散系统，一种液体以极小的液滴形式分散在另一种与其不混溶的液体中。
+    \item 如果是“油”分散在水中所形成，称为\textbf{水包油乳状液}，用符号油/水（或 O/W）表示；如果是“水”分散在油中所形成，称为\textbf{油包水乳状液}，用符号水/油（或 W/O）表示。
+    \item 确定乳状液类型的方法
+    \begin{enumerate}
+        \item 稀释法：性质与乳状液外相相同的液体能稀释乳状液。
+        \item 染色法：微量油溶性有色染料加到乳状液中。
+        \item 电导法：以水为外相的 O/W 型乳状液有较好的电导性能。
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{乳化剂的作用}
+
+\begin{enumerate}
+    \item \textbf{乳化剂}：为形成稳定乳状所必须加入的第三组分。
+    \item 影响乳状液类型的理论
+    \begin{enumerate}
+        \item 界面能量降低说
+        \item 乳化剂的分子构型影响乳状液的类型：一价金属皂形成 O/W 型乳状液，二价金属皂形成 W/O 型乳状液。“楔子”理论
+        \item 乳化剂溶解度的影响：定温下降乳化剂在水相和油相中的溶解度之比定义为分配系数。分配系数大，易形成 O/W 型乳状液；反之，易形成 W/O 型乳状液。
+        \item 两相体积的影响：水的体积 $< 26 \%$，$> 74 \%$
+    \end{enumerate} 
+\end{enumerate}
+
+\subsubsection{乳状液的不稳定性——分层、变型和破乳}
+
+\begin{enumerate}
+    \item \textbf{分层}：破乳的前导。
+    \item \textbf{变型}：乳状液由 O/W 型变为 W/O 型（或反之）。影响变型的因素有：改变乳化剂，变更两相的体积比，改变温度以及外加电解质等。离子的价数对变型所需要电解质的浓度有很大影响。
+    \item \textbf{破乳}：两种液体完全分离。第一步絮凝，第二步聚结。
+\end{enumerate}
+
+\subsection{凝胶 202060608}
+
+\subsubsection{凝胶的分类}
+
+\begin{enumerate}
+    \item 弹性凝胶
+    \item 刚性凝胶
+\end{enumerate}
+
+\subsubsection{凝胶的形成}
+
+\begin{enumerate}
+    \item 改变温度
+    \item 转换溶剂
+    \item 加入电解质：\textbf{Hofmeister 感胶离子序}
+    \item 化学反应
+\end{enumerate}
+
+\subsubsection{凝胶的性质}
+
+\begin{enumerate}
+    \item 膨胀作用：亦称\textbf{溶胀作用}
+    \item 离浆现象
+    \item 触变现象
+    \item 吸附作用
+    \item 凝胶中的扩散作用
+    \item 化学反应：Liesegang 环，过饱和和扩散
+\end{enumerate}
+
+\subsection{大分子溶液 20260608}
+
+\subsubsection{大分子溶液的界定}
+
+\begin{enumerate}
+    \item 相对分子质量大于 \qty{E4}{} 的物质称为 \textbf{大分子}。
+    \item 大分子溶液是真溶液，是热力学稳定系统，其粒子与溶剂之间没有界面；不能通过半透膜、扩散速度较小、具有一定的黏度等。
+    \item 憎液溶胶、大分子溶液和小分子溶液性质的比较
+    
 \end{enumerate}
