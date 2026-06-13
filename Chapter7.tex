@@ -91,11 +91,12 @@ $$\begin{aligned}
 推导过程略。
 代入式 \eqref{MostProbableDistribution}，得 Boltzmann 最概然分布公式：
 \begin{equation}
-    N^*_i = N \frac{e^{-\varepsilon_i / k_{\mathrm{B}} T}}{\dsum_{i} e^{-\varepsilon_i / k_{\mathrm{B}} T}}
+    N^*_i = N \frac{e^{-\varepsilon_i / k_\mathrm{B} T}}{\dsum_{i} e^{-\varepsilon_i / k_\mathrm{B} T}}
+    \label{BoltzmannMostProbableDistribution}
 \end{equation}
 代入推导式得
 \begin{equation}
-    S = k_\mathrm{B} N \ln{\sum_{i} \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}} + \frac{U}{T}
+    S = N k_\mathrm{B} \ln{\sum_{i} \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}} + \frac{U}{T}
 \end{equation}
 由
 \begin{equation*}
@@ -103,7 +104,7 @@ $$\begin{aligned}
 \end{equation*}
 得
 \begin{equation}
-    A = -k_\mathrm{B} N T \ln{\sum_{i} \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}}
+    A = -N k_\mathrm{B} T \ln{\sum_{i} \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}}
 \end{equation}
 
 \subsubsection{Boltzmann 公式的讨论——非定位系统的最概然分布}
@@ -113,13 +114,14 @@ $$\begin{aligned}
     
     上述推导过程认为能级是非简并的，每个能级只对应一个量子状态。实际上每个能级有若干不同量子状态存在。一个能级可能有的微观状态数称为该能级的\textbf{简并度} $g_i$。推导过程略，得到定位系统的 $N^*_i$、$S$ 和 $A$ 分别为 %Boltzmann推导时认为气体为定位系统
     \begin{equation}
-        N^*_i = N \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{\dsum_{i} g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}
+        N^*_i = N \frac{g_i e^{-\varepsilon_i / k_\mathrm{B} T}}{\dsum_{i} g_i e^{-\varepsilon_i / k_\mathrm{B} T}}
+        \label{BoltzmannMostProbableDistributionLocalized}
     \end{equation}
     \begin{equation}
-        S_{\text{定位}} = k_\mathrm{B} N \ln{\sum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}} + \frac{U}{T}
+        S_{\text{定位}} = N k_\mathrm{B} \ln{\sum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}} + \frac{U}{T}
     \end{equation}
     \begin{equation}
-        A_{\text{定位}} = -k_\mathrm{B} N T \ln{\sum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}}
+        A_{\text{定位}} = -N k_\mathrm{B} T \ln{\sum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}}
     \end{equation}
     只是多了相应的 $g_i$ 项。
     \item 非定位系统的 Boltzmann 最概然分布——粒子等同性的修正
@@ -132,13 +134,15 @@ $$\begin{aligned}
 
     用同样方法可推导出非定位系统的 $N^*_i$、$S$ 和 $A$ 分别为
     \begin{equation}
-        N^*_i = N \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{\dsum_{i} g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}
+        N^*_i = N \frac{g_i e^{-\varepsilon_i / k_\mathrm{B} T}}{\dsum_{i} g_i e^{-\varepsilon_i / k_\mathrm{B} T}}
     \end{equation}
     \begin{equation}
         S_{\text{非定位}} = k_\mathrm{B} \ln{\frac{\left(\dsum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}\right)^N}{N!}} + \frac{U}{T}
+        \label{SNonLocalized}
     \end{equation}
     \begin{equation}
         A_{\text{非定位}} = -k_\mathrm{B} T \ln{\frac{\left(\dsum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}\right)^N}{N!}}
+        \label{ANonLocalized}
     \end{equation}
     定位系统和非定位系统最概然分布的公式一致，但 $S$ 和 $A$ 表示式不相同。本章中以讨论气体和气相反应为主，一般都是非定位系统。
 \end{enumerate}
@@ -147,19 +151,23 @@ $$\begin{aligned}
 \begin{enumerate}
     \item 将两个能级上的粒子数进行比较
     \begin{equation}
-        \frac{N^*_i}{N^*_j} = \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{g_j e^{-\varepsilon_j/k_{\mathrm{B}}T}}
+        \frac{N^*_i}{N^*_j} = \frac{g_i e^{-\varepsilon_i / k_\mathrm{B} T}}{g_j e^{-\varepsilon_j/k_\mathrm{B}T}}
     \end{equation}
     \item 在经典统计中不考虑简并度，则上式可写为（通常略去上标）
     \begin{equation}
-        \frac{N_i}{N_j} = \frac{e^{-\varepsilon_i / k_{\mathrm{B}} T}}{e^{-\varepsilon_j/k_{\mathrm{B}}T}} = \exp\left(-\frac{\varepsilon_i - \varepsilon_j}{k_{\mathrm{B}}T}\right)
+        \frac{N_i}{N_j} = \frac{e^{-\varepsilon_i / k_\mathrm{B} T}}{e^{-\varepsilon_j/k_\mathrm{B}T}} = \exp\left(-\frac{\varepsilon_i - \varepsilon_j}{k_\mathrm{B}T}\right)
     \end{equation}
     \item 假定最低能级 $\varepsilon_0$，在该能级上粒子数 $N_0$，上式可以写作
     \begin{equation}
         N_i = N_0 \mathrm{e}^{-\Delta \varepsilon_i / k_\mathrm{B} T}
     \end{equation}
 \end{enumerate}
-%----------%
+
 \subsubsection{撷取最大项法及其原理}
+
+\begin{enumerate}
+    \item 当 $N$ 足够大时，最概然分布包括了其附近的极微小偏离的情况，足以代表系统的一切分布。
+\end{enumerate}
 
 \subsection{Bose-Einstein 统计和 Fermi-Dirac 统计}
 
@@ -167,55 +175,109 @@ $$\begin{aligned}
 
 \subsubsection{配分函数的定义}
 
-\begin{enumerate}
-    \item 令 $\sum g_i e^{-\varepsilon_i / k_{\mathrm{B}} T} \equiv q$，$q$ 称为离子的配分函数。
-    \item 从上式可得
+\begin{definition}
+    令最概然分布公式 \eqref{BoltzmannMostProbableDistributionLocalized} 中分母
     \begin{equation}
-        \frac{N_i}{N} = \frac{g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}}{q}
+        \sum_{i} g_i e^{-\varepsilon_i / k_\mathrm{B} T} \equiv q
     \end{equation}
-    \item $q$ 中的任一项 $g_i e^{-\varepsilon_i / k_{\mathrm{B}} T}$ 与 $q$ 之比，等于粒子分配在 $i$ 能级上的分数。
+    $q$ 称为粒子的配分函数，量纲为1。
+\end{definition}
+
+\begin{enumerate}
+    \item $e^{-\varepsilon_i / k_\mathrm{B} T}$ 称为 Boltzmann 因子。
+    \item $q$ 中的任一项 $g_i e^{-\varepsilon_i / k_\mathrm{B} T}$ 与 $q$ 之比，等于粒子分配在 $i$ 能级上的分数；$q$ 中的任两项之比等于在该两能级上最概然分布的粒子数之比。
 \end{enumerate}
 
 \subsubsection{配分函数与热力学函数的关系}
 
 \begin{enumerate}
-    \item Helmholtz 自由能
-    
-    根据前式及配分函数的定义，得
-    \begin{equation}
-        A_{\text{非定位}} = 
-    \end{equation}
-    \item 熵
-    
-    可由两个后项相等求出内能的表示式
-    \item 热力学能
-    
-    根据 $U = A + TS$，带入 $A$ 和 $S$，得到
-    \begin{equation}
-        U = A + TS = ... = N k_{\mathrm{B}} T^2
-    \end{equation}
-    \item Gibbs 自由能
-    
-    根据定义 $G = A + pV$，将 $A$，$p$ 值代入，得
-    \begin{equation}
-        G_{\text{非定位}} = -k_{\mathrm{B}} T \ln{\frac{q^N}{N!}} + N
-    \end{equation}
-    \item 焓
-    \begin{equation}
-        H = G + TS = N k_{\mathrm{B}} T V
-    \end{equation}
-    \item 等容热容 $C_V$
-    \begin{equation}
-        C_V = \left(\frac{\partial U}{\partial T}\right)_V = 
-    \end{equation}
-    \item 从以上的表达式可以看出，只要知道配分函数 $q$ 就能求出诸热力学函数。
-    \item 对于定位系统，用同样的方法也可以导出其热力学函数
-    \begin{equation}
-        A_{\text{定位}} = -k_{\mathrm{B}} T \ln{q^N}
-    \end{equation}
-    \item 由上述公式可见无论是定位系统或非定位系统 $U, H, C_V$ 的表示式是一样的，只是在热力学函数 $A, S, G$ 上相差一些常数项。
-\end{enumerate}
+    \item $N$ 个粒子组成的非定位系统
+    \begin{enumerate}
+        \item Helmholtz 自由能 $A$
 
+        根据式 \eqref{ANonLocalized} 及配分函数的定义，得
+        \begin{equation}
+            A_{\text{非定位}} = -k_\mathrm{B} T \ln{\frac{\left(\dsum_{i} g_i \mathrm{e}^{\varepsilon_i / k_\mathrm{B} T}\right)^N}{N!}} = -k_\mathrm{B} T \ln{\frac{q^N}{N!}}
+            \label{ANonLocalizedPartition}
+        \end{equation}
+
+        \item 熵 $S$
+    
+        已知
+        \begin{equation}
+            \mathrm{d}A = -S \mathrm{d}T - p \mathrm{d}V
+            \label{dA}
+        \end{equation}
+        \begin{equation*}
+            \left(\frac{\partial A}{\partial T}\right)_{V,N} = -S
+        \end{equation*}
+
+        故
+        \begin{equation}
+            S_{\text{非定位}} = k_\mathrm{B} \ln{\frac{q^N}{N!}} + N k_\mathrm{B} T \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N}
+            \label{SNonLocalizedPartition1}
+        \end{equation}
+
+        或由式 \eqref{SNonLocalized} 得
+        \begin{equation}
+            S_{\text{非定位}} = k_\mathrm{B} \ln{\frac{q^N}{N!}} + \frac{U}{T}
+            \label{SNonLocalizedPartition2}
+        \end{equation}
+
+        \item 热力学能 $U$
+    
+        根据 $U = A + TS$，带入 $A$ 和 $S$，得到
+        \begin{equation}
+            \begin{aligned}
+                U_{\text{非定位}} &= A + TS = -k_\mathrm{B} T \ln{\frac{q^N}{N!}}
+                + k_\mathrm{B} \ln{\frac{q^N}{N!}} + N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} \\
+                &= N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} \\
+            \end{aligned}
+        \end{equation}
+    
+        上式也可由式 \eqref{SNonLocalizedPartition1} 和 \eqref{SNonLocalizedPartition2} 联立得到。
+
+        \item Gibbs 自由能 $G$
+    
+        由式 \eqref{dA} 得
+        \begin{equation}
+            p = -\left(\frac{\partial A}{\partial V}\right)_{T,N} = N k_\mathrm{B} T \left(\frac{\partial \ln{q}}{\partial V}\right)_{T,N}
+        \end{equation}
+
+        根据定义 $G = A + pV$，将 $A$，$p$ 值代入，得
+        \begin{equation}
+            G_{\text{非定位}} = -k_\mathrm{B} T \ln{\frac{q^N}{N!}} + N k_\mathrm{B} T V \left(\frac{\partial \ln{q}}{\partial V}\right)_{T,N}
+        \end{equation}
+
+        \item 焓 $H$
+    
+        根据 $H = G + TS$，带入 $G$ 和 $S$，得到
+        \begin{equation}
+            H_{\text{非定位}} = G + TS = N k_\mathrm{B} T V \left(\frac{\partial \ln{q}}{\partial V}\right)_{T,N} + N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N}
+        \end{equation}
+
+        \item 等容热容 $C_V$
+        
+        \begin{equation}
+            C_{V,\text{非定位}} = \left(\frac{\partial U}{\partial T}\right)_V = \frac{\partial}{\partial T} \left[N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N}\right]_V
+        \end{equation}
+
+        \item 只要知道配分函数 $q$ 就能求出诸热力学函数。
+    \end{enumerate}
+
+    \item 对于定位系统，用同样的方法也可以导出其热力学函数
+    \begin{align}
+        A_{\text{定位}} &= -N k_\mathrm{B} T \ln{q} \\
+        S_{\text{定位}} &= N k_\mathrm{B} \ln{q} + N k_\mathrm{B} T \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} \\
+        U_{\text{定位}} &= N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} \\
+        G_{\text{定位}} &= -N k_\mathrm{B} T \ln{q} + N k_\mathrm{B} T V \left(\frac{\partial \ln{q}}{\partial V}\right)_{T,N} \\
+        H_{\text{定位}} &= N k_\mathrm{B} T V \left(\frac{\partial \ln{q}}{\partial V}\right)_{T,N} + N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} \\
+        C_{V,\text{定位}} &= \frac{\partial}{\partial T} \left[N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N}\right]_V
+    \end{align}
+
+    \item 无论是定位系统或非定位系统, $U, H, C_V$ 的表示式是一样的，只是在热力学函数 $A, S, G$ 上相差一些常数项。
+\end{enumerate}
+%----------%
 \subsubsection{配分函数的分离}
 
 \begin{enumerate}
@@ -226,22 +288,22 @@ $$\begin{aligned}
     \item 各不同能级各有相应的简并度，总的简并度 ($g_i$) 等于各个能级上简并度的乘积。
     \item 根据配分函数的定义，得
     \begin{equation*}
-        q = \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_{\mathrm{B}} T}\right)
+        q = \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_\mathrm{B} T}\right)
     \end{equation*}
     从数学上可以证明，几个独立变数乘积之和等于各自求和的乘积。于是，上式可以写作
     \begin{equation}
         \begin{aligned}
-            q = &\left[\sum_{i} g_{i,\mathrm{t}} \exp\left(-\frac{\varepsilon_{i,\mathrm{t}}}{k_{\mathrm{B}} T}\right)\right] \cdot
-            \left[\sum_{i} g_{i,\mathrm{r}} \exp\left(-\frac{\varepsilon_{i,\mathrm{r}}}{k_{\mathrm{B}} T}\right)\right] \cdot \\
-            &\left[\sum_{i} g_{i,\mathrm{v}} \exp\left(-\frac{\varepsilon_{i,\mathrm{v}}}{k_{\mathrm{B}} T}\right)\right] \cdot
-            \left[\sum_{i} g_{i,\mathrm{e}} \exp\left(-\frac{\varepsilon_{i,\mathrm{e}}}{k_{\mathrm{B}} T}\right)\right] \cdot
-            \left[\sum_{i} g_{i,\mathrm{n}} \exp\left(-\frac{\varepsilon_{i,\mathrm{n}}}{k_{\mathrm{B}} T}\right)\right] \\
+            q = &\left[\sum_{i} g_{i,\mathrm{t}} \exp\left(-\frac{\varepsilon_{i,\mathrm{t}}}{k_\mathrm{B} T}\right)\right] \cdot
+            \left[\sum_{i} g_{i,\mathrm{r}} \exp\left(-\frac{\varepsilon_{i,\mathrm{r}}}{k_\mathrm{B} T}\right)\right] \cdot \\
+            &\left[\sum_{i} g_{i,\mathrm{v}} \exp\left(-\frac{\varepsilon_{i,\mathrm{v}}}{k_\mathrm{B} T}\right)\right] \cdot
+            \left[\sum_{i} g_{i,\mathrm{e}} \exp\left(-\frac{\varepsilon_{i,\mathrm{e}}}{k_\mathrm{B} T}\right)\right] \cdot
+            \left[\sum_{i} g_{i,\mathrm{n}} \exp\left(-\frac{\varepsilon_{i,\mathrm{n}}}{k_\mathrm{B} T}\right)\right] \\
         \end{aligned}
     \end{equation}
     如令
     \begin{equation*}
         \begin{aligned}
-            \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_{\mathrm{B}} T}\right) \quad \text{平动}
+            \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_\mathrm{B} T}\right) \quad \text{平动}
         \end{aligned}
     \end{equation*}
     \begin{equation}
@@ -258,13 +320,13 @@ $$\begin{aligned}
     \item 
     \begin{equation*}
         \begin{aligned}
-            q_{\mathrm{n}} &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right)... \\
-            &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right) \\
+            q_{\mathrm{n}} &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right)... \\
+            &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right) \\
         \end{aligned}
     \end{equation*}
     由于原子核的能级间隔相差很大，所以在通常情况下，上式中的第二项及以后的项都可以忽略不计，即
     \begin{equation}
-        q_{\mathrm{n}} = g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right)
+        q_{\mathrm{n}} = g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right)
     \end{equation}
      核基态的能量选作零，则上式又可写作
     \begin{equation}
@@ -300,18 +362,18 @@ $$\begin{aligned}
     
     令
     \begin{equation*}
-        \frac{h^2}{8m k_{\mathrm{B}} T a^2} = \alpha^2
+        \frac{h^2}{8m k_\mathrm{B} T a^2} = \alpha^2
     \end{equation*}
     则
     \begin{equation*}
-        \sum_{n_x = 1}^{\infty} \exp\left(-\frac{h^2}{8m k_{\mathrm{B}} T a^2} \cdot n_x^2\right)
+        \sum_{n_x = 1}^{\infty} \exp\left(-\frac{h^2}{8m k_\mathrm{B} T a^2} \cdot n_x^2\right)
     \end{equation*}
     \begin{equation}
         q_{\mathrm{t}}
     \end{equation}
     \item 平动配分函数对热力学函数的贡献：
     \begin{equation}
-        A_{\mathrm{t}} = -k_{\mathrm{B}} T \ln{\frac{\left(q_{\mathrm{t}}\right)^N}{N!}}
+        A_{\mathrm{t}} = -k_\mathrm{B} T \ln{\frac{\left(q_{\mathrm{t}}\right)^N}{N!}}
     \end{equation}
     可计算理想气体的平动熵
 \end{enumerate}
@@ -323,10 +385,10 @@ $$\begin{aligned}
     \item Helmholtz 自由能 $A$
     \begin{equation}
         \begin{aligned}
-            A &= -k_{\mathrm{B}} T \ln{\frac{q^N}{N!}} \\
-            &= -k_{\mathrm{B}} T \ln{\left(q_{\mathrm{n}}\right)^N}
-            -k_{\mathrm{B}} T \ln{\left(q_{\mathrm{e}}\right)^N}
-            -k_{\mathrm{B}} T \ln{\frac{\left(q_{\mathrm{t}}\right)^N}{N!}} \\
+            A &= -k_\mathrm{B} T \ln{\frac{q^N}{N!}} \\
+            &= -k_\mathrm{B} T \ln{\left(q_{\mathrm{n}}\right)^N}
+            -k_\mathrm{B} T \ln{\left(q_{\mathrm{e}}\right)^N}
+            -k_\mathrm{B} T \ln{\frac{\left(q_{\mathrm{t}}\right)^N}{N!}} \\
         \end{aligned}
     \end{equation}
     在讨论热力学变量时，这些量是常量，都可以消去。
@@ -335,7 +397,7 @@ $$\begin{aligned}
     
     只有平动能对热力学能有贡献。
     \begin{equation}
-        U = N k_{\mathrm{B}} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} = \frac32 N k_{\mathrm{B}} T
+        U = N k_\mathrm{B} T^2 \left(\frac{\partial \ln{q}}{\partial T}\right)_{V,N} = \frac32 N k_\mathrm{B} T
     \end{equation}
     \item 定容热容 $C_V$
     \item 化学式 $\mu$
@@ -366,11 +428,11 @@ $$\begin{aligned}
 
     得到
     \begin{equation}
-        q_{\mathrm{r}} = \int_{0}^{\infty} = \frac{T}{\varTheta_{\mathrm{r}}} = \frac{8\pi^2 I k_{\mathrm{B}} T}{h^2}
+        q_{\mathrm{r}} = \int_{0}^{\infty} = \frac{T}{\varTheta_{\mathrm{r}}} = \frac{8\pi^2 I k_\mathrm{B} T}{h^2}
     \end{equation}
     \item 对称数 $\sigma$ 是分子经过刚性转动一周后，所产生的不可分辨的几何位置数。对于同核双原子分子，$\sigma = 2$，故其配分函数写作
     \begin{equation}
-        q_{\mathrm{r}} = \frac{8\pi^2 I k_{\mathrm{B}} T}{\sigma h^2}
+        q_{\mathrm{r}} = \frac{8\pi^2 I k_\mathrm{B} T}{\sigma h^2}
     \end{equation}
 \end{enumerate}
 
@@ -391,7 +453,7 @@ $$\begin{aligned}
     \end{equation}
     在低温时，……
     \begin{equation}
-        q_{\mathrm{v}} = \exp\left(-\frac12 \frac{h \nu}{k_\mathrm{B} T}\right) \cdot \frac1{1 - \mathrm{e}^{-h \nu / k_{\mathrm{B}} T}}
+        q_{\mathrm{v}} = \exp\left(-\frac12 \frac{h \nu}{k_\mathrm{B} T}\right) \cdot \frac1{1 - \mathrm{e}^{-h \nu / k_\mathrm{B} T}}
     \end{equation}
     \item 对于多原子分子，考虑自由度
     \begin{equation}
@@ -410,15 +472,15 @@ $$\begin{aligned}
 
 \begin{equation}
     \begin{aligned}
-        q_{\text{总}} = \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_{\mathrm{B}} T}\right)
+        q_{\text{总}} = \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_\mathrm{B} T}\right)
     \end{aligned}
 \end{equation}
 对于单原子分子，有
 \begin{equation}
     q_{\text{总}} = 
-    \left[g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_{\mathrm{B}} T}\right)\right] \cdot
-    \left[g_{\mathrm{e},0} \exp\left(-\frac{\varepsilon_{\mathrm{e},0}}{k_{\mathrm{B}} T}\right)\right] \cdot
-    \left[\frac{(2\pi m k_{\mathrm{B}} T)^{3/2}}{h^3} V\right]
+    \left[g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right)\right] \cdot
+    \left[g_{\mathrm{e},0} \exp\left(-\frac{\varepsilon_{\mathrm{e},0}}{k_\mathrm{B} T}\right)\right] \cdot
+    \left[\frac{(2\pi m k_\mathrm{B} T)^{3/2}}{h^3} V\right]
 \end{equation}
 
 \begin{example} % 7.3
