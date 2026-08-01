@@ -1,7 +1,355 @@
 % !TeX root = elegantnote-cn.tex
-\section{}
-\section{}
-\section{}
-\section{}
-\section{}
-\section{}
+\section{气体}
+
+\subsection{气体分子动理论 20250922}
+
+\begin{enumerate}
+    \item 理想气体状态方程式
+    \begin{equation}
+        pV = nRT
+        \label{IdealGasEquation}
+    \end{equation}
+    \item 在任何压力、任何温度下都遵从式 \eqref{IdealGasEquation} 的气体称为理想气体。低压气体可视为理想气体。
+\end{enumerate}
+
+\subsubsection{分子动理论的基本公式}
+
+\begin{enumerate}
+    \item 气体分子的微观模型（统计力学，理想状态）
+    \begin{enumerate}
+        \item 气体分子是大量分子的集合体（体积不计，质点）；
+        \item 气体分子不停运动，均匀分布状态（有序）；
+        \item 分子间及分子与器壁间的碰撞是完全弹性的（无分子作用力）。
+    \end{enumerate}
+    \item 设体积 $V$ 容器内分子总数 $N$，单位体积分子数 $n = \frac{N}{V}$，每个分子质量 $m$。
+    
+    令单位体积中各群的分子数分别是 $n_1, n_2, \cdots, \sum n_i = n$。
+    \begin{enumerate}
+        \item 设其中第 $i$ 群分子速度 $u_i$，在 $x, y, z$ 上分速度 $u_{i,x}, u_{i,y}, u_{i,z}$。
+        
+        在 $\mathrm{d}t$ 时间，碰到 $\mathrm{d}A$ 面上垂直总动量：$M_1 = m \sum_{i=1}^{g} n_i \cdot u_{i,x}^2 \mathrm{d}t \mathrm{d}A$
+        
+        新组成的 $g'$ 群分子在 $\mathrm{d}t$ 时间内碰到 $\mathrm{d}A$ 上的垂直总动量（反射回的分子）：$M_2 = -m \sum_{i=g+1}^{g+g'} n_i \cdot u_{i,x}^2 \mathrm{d}t \mathrm{d}A$
+        
+        在垂直于 $\mathrm{d}A$ 面方向动量变化：$M = M_1 - M_2 = m \sum n_i \cdot u_{i,x}^2 \mathrm{d}t \mathrm{d}A$
+        
+        \item $p = \frac{F}{S} = \frac{m \cdot a}{S} = \frac{m \cdot v}{S \cdot t} = \frac{M}{S \cdot t}$，故 $p_x = \frac{m \sum n_i \cdot u_{i,x}^2 \mathrm{d}t \mathrm{d}A}{\mathrm{d}t \mathrm{d}A} = m \sum n_i \cdot u_{i,x}^2$
+        
+        \item 令 $\overline{u_x^2}$ 代表各分子在 $x$ 方向分速度平方的均值，$\overline{u_x^2} = \frac{\sum n_i \cdot u_{i,x}^2}{n}$
+        
+        故 $p_x = m n \overline{u_x^2}$, $p_y = m n \overline{u_y^2}$, $p_z = m n \overline{u_z^2}$
+        
+        \item 各方向压力相同，$p_x = p_y = p_z = p$，故 $\overline{u_x^2} = \overline{u_y^2} = \overline{u_z^2}$
+        
+        \item 由 $\sum n_i u_i^2 = \sum n_i u_{i,x}^2 + \sum n_i u_{i,y}^2 + \sum n_i u_{i,z}^2$，得 
+        \begin{equation*}
+            \frac{\sum n_i u_i^2}{n} = \frac{\sum n_i u_{i,x}^2}{n} + \frac{\sum n_i u_{i,y}^2}{n} + \frac{\sum n_i u_{i,z}^2}{n} = \overline{u_x^2} + \overline{u_y^2} + \overline{u_z^2}
+        \end{equation*}
+        令均方根速率 $u = \sqrt{\frac{\sum n_i u_i^2}{n}}$（不能直接测量），则 $u^2 = 3\overline{u_x^2}$，即 $p = \frac13 m n u^2$
+        
+        \item 两边同乘 $V$，得宏观可测量与微观不可测量的联系式：
+        \begin{equation}
+            pV = \frac13 m N u^2
+        \end{equation}
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{压力和温度的统计概念}
+
+\begin{enumerate}
+    \item 平均压力为定值，宏观可测。
+    \item $p$ 是大量分子集合的总效应，个别分子压力无意义。
+    \item 分子平均平动能是温度函数，$\frac12 m u^2 = f(T)$。
+    \item 温度亦有统计平均的概念。
+\end{enumerate}
+
+\subsubsection{气体分子运动公式对几个经验定律的说明}
+
+\begin{enumerate}
+    \item Boyle-Marriotte 定律：定温定量气体体积与压力成反比。
+    \begin{equation*}
+        pV = \frac13 m N u^2 = \frac23 \cdot \frac12 m u^2 \cdot N = \frac23 \overline{E_{\mathrm{t}}} N \longrightarrow pV = C
+    \end{equation*}
+    
+    \item Charles-Gay-Lussac 定律：定量定压气体，体积与温度成正比。
+    
+    分子平均平动能 $\overline{E_{\mathrm{t}}} = \frac12 m u^2 = f(T)$。
+    
+    设温度在 \qty{0}{\degreeCelsius} 和 $t$ 时的平均平动能分别是 $\overline{E_{\mathrm{t},0}}$，$\overline{E_{\mathrm{t},t}}$；$\overline{E_{\mathrm{t},t}} = \overline{E_{\mathrm{t},0}}(1 + \alpha t)$，$\alpha$ 为膨胀系数。
+    
+    根据气体分子动理论 $V = \frac{2}{3p} N \overline{E_{\mathrm{t}}}$，得 $V_t = V_0(1 + \alpha t)$。
+    
+    令 $T = t + \frac{1}{\alpha}$，则 $V_t = V_0 \alpha T = C'T$。
+    
+    \item Avogadro 定律：温度相同，任意两种气体具有相等平均平动能，$\frac12 m_1 u_1^2 = \frac12 m_2 u_2^2$。
+    
+    根据气体分子动理论 $pV = \frac23 N \overline{E_{\mathrm{t}}}$。在同温同压下，相同体积的气体应含有相同的分子数。
+    
+    \item 理想气体的状态方程
+    \begin{enumerate}
+        \item $V = f(p, T, N)$ 或 $\mathrm{d}V = \left(\frac{\partial V}{\partial p}\right)_{T,N} \mathrm{d}p + \left(\frac{\partial V}{\partial T}\right)_{p,N} \mathrm{d}T + \left(\frac{\partial V}{\partial N}\right)_{p,T} \mathrm{d}N$
+        
+        对于定量气体，$N$为常数，$\mathrm{d}N = 0$，有 $\mathrm{d}V = \left(\frac{\partial V}{\partial p}\right)_{T,N} \mathrm{d}p + \left(\frac{\partial V}{\partial T}\right)_{p,N} \mathrm{d}T$
+        
+        \item 根据 Boyle-Marriotte 定律 $V = \frac{C}{p}$，$\left(\frac{\partial V}{\partial p}\right)_{T,N} = -\frac{C}{p^2} = -\frac{V}{p}$
+        
+        根据 Charles-Gay-Lussac 定律 $V = C'T$，$\left(\frac{\partial V}{\partial T}\right)_{p,N} = C' = \frac{V}{T}$
+        
+        \item 代入化简得 $\frac{\mathrm{d}V}{V} = -\frac{\mathrm{d}p}{p} + \frac{\mathrm{d}T}{T}$，积分得 $\ln V + \ln p = \ln T + \text{常数}$
+        
+        \item 取 $1\mathrm{\,mol}$ 气体，体积 $V_{\mathrm{m}}$，常数为 $\ln R$，得 $pV_{\mathrm{m}} = RT$。物质的量为 $n$，则有 $pV = nRT$。
+        
+        \item $n = \frac{N}{L}$，$N$为分子数，$L$为 Avogadro常数，令 $\frac{R}{L} = k_{\mathrm{B}}$（Boltzmann 常数），则 $pV = N k_{\mathrm{B}} T$。
+    \end{enumerate}
+    
+    \item Dalton 分压定律
+    
+    定温，体积为 $V$ 时混合几种气体。混合前有：$\sum p_i = \frac{2}{3V} \sum N_i \overline{E_i}$，混合后有 $p = \frac{2}{3V} N_{\mathrm{mix}} \overline{E_{\mathrm{mix}}}$。
+    
+    相同温度，$\overline{E_1} = \overline{E_2} = \cdots = \overline{E_{\mathrm{mix}}}$，$N_{\mathrm{mix}} = \sum N_i$，故 $\sum N_i \overline{E_i} = N_{\mathrm{mix}} \overline{E_{\mathrm{mix}}}$，所以 $p = \sum p_i$。
+    
+    或 $\frac{p_i}{p} = x_i$（摩尔分数）。
+    
+    \item Amagat 分体积定律：$T, p$ 一定，混合气体体积等于分体积之和。$V = \sum V_i$，$V_i = V x_i$，证略。
+\end{enumerate}
+
+\subsubsection{分子平均平动能与温度的关系}
+
+\begin{equation*}
+    \left.
+    \begin{aligned}
+        \overline{E_{\mathrm{t}}} &= \frac12 m u^2 = f(T) \\
+        pV &= \frac13 N m u^2 = \overline{E_{\mathrm{t}}} \frac23 N \\
+        pV &= N k_{\mathrm{B}} T
+    \end{aligned}
+    \right\}
+    \longrightarrow \overline{E_{\mathrm{t}}} = \frac32 k_{\mathrm{B}} T
+\end{equation*}
+对于 $1\mathrm{\,mol}$ 分子，$\overline{E_{\mathrm{t,m}}} = \frac32 RT$。
+
+\subsection{摩尔气体常数 20250922}
+
+各种气体不论温度如何：
+\begin{equation}
+    \lim_{p \to 0} \frac{p V_{\mathrm{m}}}{T} = R ~ (R = \qty{8.314}{\joule\per\mole\per\kelvin})
+\end{equation}
+
+\subsection{理想气体的状态图 20250922}
+
+$p, V, T$ 的立体图中，理想气体的出现在同一曲面上。
+\begin{equation}
+    \frac{p_1 V_1}{T_1} = \frac{p_2 V_2}{T_2}
+\end{equation}
+此图亦称相图。
+
+\subsection{分子运动的速率分布 20250922}
+
+\subsubsection{Maxwell 速率分布定律}
+
+\begin{enumerate}
+    \item 设容器内有 $N$ 个分子，速率在 $v \sim (v + \mathrm{d}v)$ 范围内分子数 $\mathrm{d}N_v$。
+    \begin{equation*}
+        \mathrm{d}N_v \propto N\mathrm{d}v \quad \text{或} \quad \mathrm{d}N_v = N f(v)\mathrm{d}v
+    \end{equation*}
+    \begin{equation}
+        f(v) = \frac{4}{\sqrt{\pi}} \left(\frac{m}{2k_{\mathrm{B}}T}\right)^{3/2} \exp\left(-\frac{mv^2}{2k_{\mathrm{B}}T}\right) v^2 \quad \text{（推导略）}
+    \end{equation}
+    \item 温度低时分子速率分布集中，温度高时分子速率分布较宽。
+\end{enumerate}
+
+\subsubsection{分子速率的三个统计平均值——最概然速率、数学平均速率与均方根速率}
+
+\begin{enumerate}
+    \item \textbf{最概然速率} $v_{\mathrm{m}} = \sqrt{\frac{2RT}{M}}$，对应 Maxwell 速率分布曲线最高点。
+    \item \textbf{数学平均速率} $v_{\mathrm{a}} = \sqrt{\frac{8RT}{\pi M}}$，用于计算分子运动平均距离。
+    \item \textbf{均方根速率} $v = \sqrt{\frac{3RT}{M}}$，用于计算平均平动能。
+\end{enumerate}
+三者比值：$v_{\mathrm{m}} : v_{\mathrm{a}} : v = 1 : 1.128 : 1.224$。
+
+\subsubsection{气体分子按速率分布的实验验证——分子射线束实验}
+
+统计的分子越多越准确。
+
+\subsection{分子平动能的分布 20250922}
+
+\begin{enumerate}
+    \item 各分子能量 $E = \frac12 m v^2$，$\mathrm{d}E = m v \mathrm{d}v$。代入 Maxwell 速率分布公式，有：
+    \begin{equation*}
+        \frac{\mathrm{d}N_v}{N} = f(v)\mathrm{d}v = \frac{4}{\sqrt{\pi}} \left(\frac{m}{2k_{\mathrm{B}}T}\right)^{1.5} \exp\left[-\frac{mv^2}{2k_{\mathrm{B}}T}\right] v^2 \mathrm{d}v
+    \end{equation*}
+    \item 能量在 $E \sim E + \mathrm{d}E$ 间分子所占分数：
+    \begin{equation*}
+        \frac{\mathrm{d}N_E}{N} = \frac{2}{\sqrt{\pi}} \left(\frac{1}{k_{\mathrm{B}}T}\right)^{1.5} \mathrm{e}^{-\frac{E}{k_{\mathrm{B}}T}} E^{1/2} \mathrm{d}E = f(E)\mathrm{d}E
+    \end{equation*}
+    \begin{equation}
+        f(E) = \frac{2}{\sqrt{\pi}} \left(\frac{1}{k_{\mathrm{B}}T}\right)^{1.5} \mathrm{e}^{-\frac{E}{k_{\mathrm{B}}T}} E^{1/2}
+    \end{equation}
+    $f(E)$ 为能量分布函数。
+    
+    \item 能量大于某定值 $E_1$ 的分子分数：
+    \begin{equation*}
+        \int_{E_1}^{\infty} \frac{\mathrm{d}N_E}{N} = \int_{E_1}^{\infty} \frac{2}{\sqrt{\pi}} \left(\frac{1}{k_{\mathrm{B}}T}\right)^{1.5} \mathrm{e}^{-\frac{E}{k_{\mathrm{B}}T}} E^{1/2} \mathrm{d}E
+    \end{equation*}
+    分部积分法得：
+    \begin{equation*}
+        \frac{N_{E_1 \to \infty}}{N} = \frac{2}{\sqrt{\pi}} \mathrm{e}^{-\frac{E_1}{k_{\mathrm{B}}T}} \left(\frac{E_1}{k_{\mathrm{B}}T}\right)^{1/2} \left[1 + \frac{k_{\mathrm{B}}T}{2E_1} - \left(\frac{k_{\mathrm{B}}T}{2E_1}\right)^2 + 3\left(\frac{k_{\mathrm{B}}T}{2E_1}\right)^3 - \cdots\right]
+    \end{equation*}
+    若 $E_1 \gg k_{\mathrm{B}}T$，取第一项：
+    \begin{equation}
+        \frac{N_{E_1 \to \infty}}{N} \approx \frac{2}{\sqrt{\pi}} \mathrm{e}^{-\frac{E_1}{k_{\mathrm{B}}T}} \left(\frac{E_1}{k_{\mathrm{B}}T}\right)^{1/2}
+    \end{equation}
+    此为三维空间能量分布公式。
+    
+    \item 设分子在平面上运动，对于二维空间的公式：
+    \begin{equation*}
+        \frac{N_{E_1 \to \infty}}{N} = \mathrm{e}^{-\frac{E_1}{k_{\mathrm{B}}T}}, \quad \frac{N_{E_2 \to \infty}}{N_{E_1 \to \infty}} = \mathrm{e}^{-\frac{E_2 - E_1}{k_{\mathrm{B}}T}}
+    \end{equation*}
+\end{enumerate}
+
+\subsection{气体分子在重力场中的分布 20250922}
+
+\begin{enumerate}
+    \item 重力场中，无规则热运动使气体分子均匀分布，重力使分子向下聚集，故产生密度差异。
+    \item 设高 $h$ 处压力为 $p$，$h + \mathrm{d}h$ 处压力为 $p + \mathrm{d}p$，压力差 $\mathrm{d}p = -\rho g \mathrm{d}h$。
+    \item 假设气体符合理想气体公式，则 $\rho = \frac{Mp}{RT}$，代入上式有 $-\frac{\mathrm{d}p}{p} = \frac{Mg}{RT} \mathrm{d}h$。
+    \item 积分 $\int_{p_0}^{p} -\frac{\mathrm{d}p}{p} = \int_{0}^{h} \frac{Mg}{RT} \mathrm{d}h$，假定 $0 \sim h$ 范围温度不变，得 $\ln \frac{p_0}{p} = \frac{Mgh}{RT}$。
+    \begin{equation*}
+        \text{即} \quad p = p_0 \exp\left(-\frac{Mgh}{RT}\right) \quad \text{或} \quad p = p_0 \exp\left(-\frac{mgh}{k_{\mathrm{B}}T}\right)
+    \end{equation*}
+    \item 同一温度，$\frac{p}{p_0} = \frac{n}{n_0} = \frac{\rho}{\rho_0}$，同理有：
+    \begin{equation*}
+        \rho = \rho_0 \exp\left(-\frac{mgh}{k_{\mathrm{B}}T}\right), \quad n = n_0 \exp\left(-\frac{mgh}{k_{\mathrm{B}}T}\right)
+    \end{equation*}
+    此为分子在重力场中的分布（Boltzmann 公式）。
+    \item 悬浮微粒在重力场中的分布有类似公式：
+    微粒受向下作用力 $mg - \rho_0 V g = m\left(1 - \frac{\rho_0}{\rho}\right)g = m^* g$（考虑浮力的等效质量）
+    \begin{equation}
+        \longrightarrow n = n_0 \exp\left(-\frac{m^* g h}{k_{\mathrm{B}}T}\right)
+    \end{equation}
+\end{enumerate}
+
+\subsection{分子的碰撞频率与平均自由程 20250922}
+
+\subsubsection{分子的平均自由程}
+
+\begin{enumerate}
+    \item 分子在两次连续碰撞间所经过的路程为自由程 $l$。
+    \item 单位时间内，分子平均速率为 $v_{\mathrm{a}}$，与其他分子碰撞次数为 $Z'$，分子的平均自由程 $\bar{l} = \frac{v_{\mathrm{a}}}{Z'}$。
+    \item 分子有效半径 $r$，有效直径 $d$。以有效直径为半径作圆，其面积称为分子碰撞的有效截面积 $\pi d^2$。
+    \begin{equation*}
+        Z' = \frac{v_{\mathrm{a}} t \pi d^2 n}{t} = v_{\mathrm{a}} \pi d^2 n
+    \end{equation*}
+    平均来说，两分子以 $90^{\circ}$ 角相互碰撞，$v_{\mathrm{r}} = \sqrt{v_{\mathrm{a}}^2 + v_{\mathrm{a}}^2} = \sqrt{2}v_{\mathrm{a}}$。代入上式有 $Z' = \sqrt{2} \pi d^2 v_{\mathrm{a}} n$。
+    \begin{equation}
+        \bar{l} = \frac{v_{\mathrm{a}}}{Z'} = \frac{1}{\sqrt{2} \pi d^2 n}
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{分子的互碰撞频率}
+
+\begin{enumerate}
+    \item 设单位体积内有 $n$ 个分子，每个分子在单位时间内与 $Z'$ 个分子相碰，则单位时间、单位体积内碰撞总次数 $Z$：
+    \begin{equation}
+        Z = \frac12 n Z' = \frac{\sqrt{2}}{2} \pi d^2 n^2 v_{\mathrm{a}} = \frac{\sqrt{2}}{2} \pi d^2 n^2 \sqrt{\frac{8RT}{\pi M}} = 2\pi d^2 n^2 \sqrt{\frac{RT}{\pi M}}
+    \end{equation}
+    \item 不同分子的互碰撞频率：
+    \begin{equation}
+        Z = \pi d_{\mathrm{AB}}^2 \sqrt{\frac{8RT}{\pi \mu}} n_{\mathrm{A}} n_{\mathrm{B}}
+    \end{equation}
+    其中 $d_{\mathrm{AB}} = \frac{d_{\mathrm{A}} + d_{\mathrm{B}}}{2}$，$\frac{1}{\mu} = \frac{1}{M_{\mathrm{A}}} + \frac{1}{M_{\mathrm{B}}}$。
+\end{enumerate}
+
+\subsubsection{分子与器壁的碰撞频率}
+略
+
+\subsubsection{分子的泻流}
+略
+
+\subsection{实际气体 20250922}
+
+\subsubsection{实际气体的行为}
+
+\begin{enumerate}
+    \item 压缩因子 $Z = \frac{pV}{nRT} = \frac{p V_{\mathrm{m}}}{RT}$，$Z = \frac{V_{\mathrm{m}}(\text{实})}{V_{\mathrm{m}}(\text{理})}$。 $Z < 1$ 比理想气体易压缩；$Z > 1$ 比理想气体难压缩。
+    \item 波义耳温度 $T_{\mathrm{B}}$：在此温度下，$Z-p$ 曲线在低压段时，$Z \approx 1.0$，随压力变化不大，附合理想气体。 $\left[ \frac{\partial(p V_{\mathrm{m}})}{\partial p} \right]_{T, p \to 0} = 0$。 气体温度高于 $T_{\mathrm{B}}$ 时，可压缩性小，难液化。
+\end{enumerate}
+
+\subsubsection{van der Waals 方程式}
+
+\begin{enumerate}
+    \item 考虑分子自身体积，$1\mathrm{\,mol}$ 分子的活动空间为 $V_{\mathrm{m}} - b$。 故有 $p = \frac{RT}{V_{\mathrm{m}} - b}$，其中 $b = \frac12 \times \frac43 \pi (2r)^3 \cdot N_{\mathrm{A}} = 4 V_{\text{molecule}} N_{\mathrm{A}}$。
+    \item 分子间相互作用力使气体施于器壁的压力小，$p = \frac{RT}{V_{\mathrm{m}} - b} - \frac{a}{V_{\mathrm{m}}^2}$。
+    \item 上式变形得 $\left(p + \frac{a}{V_{\mathrm{m}}^2}\right)(V_{\mathrm{m}} - b) = RT$，即 $\left(p + \frac{an^2}{V^2}\right)(V - nb) = nRT$。
+    \item 将 van der Waals 方程展开，有 $p V_{\mathrm{m}} = RT + bp - \frac{a}{V_{\mathrm{m}}} + \frac{ab}{V_{\mathrm{m}}^2}$。 
+    高温时忽略分子间引力（$a$ 项），有 $p V_{\mathrm{m}} = RT + bp$，$p V_{\mathrm{m}} > RT$。 此为 $T_{\mathrm{B}}$ 以上的情况：$p V_{\mathrm{m}}$ 随 $p$ 增大而增大。
+    低温且相对低压时（$b$ 项），有 $p V_{\mathrm{m}} = RT - \frac{a}{V_{\mathrm{m}}}$，$p V_{\mathrm{m}} < RT$。 但 $p$ 增大时，$b$ 的效应显著，又将有 $p V_{\mathrm{m}} > RT$。 此为 $T_{\mathrm{B}}$ 以下的情况：$p V_{\mathrm{m}}$ 随 $p$ 的增大先减小后增大。
+    \item 根据 van's 方程求 Boyle 温度：$p = \frac{RT}{V_{\mathrm{m}} - b} - \frac{a}{V_{\mathrm{m}}^2}$。
+    \begin{equation*}
+        \left[ \frac{\partial(p V_{\mathrm{m}})}{\partial p} \right]_{T, p \to 0} = \left[ \frac{\partial(p V_{\mathrm{m}})}{\partial V_{\mathrm{m}}} \right]_T \cdot \left( \frac{\partial V_{\mathrm{m}}}{\partial p} \right)_T = \left[ \frac{RT}{V_{\mathrm{m}} - b} - \frac{RT V_{\mathrm{m}}}{(V_{\mathrm{m}} - b)^2} + \frac{a}{V_{\mathrm{m}}^2} \right] \left( \frac{\partial V_{\mathrm{m}}}{\partial p} \right)_T = 0
+    \end{equation*}
+    即 $RT_{\mathrm{B}} = \frac{a}{b} \left(\frac{V_{\mathrm{m}} - b}{V_{\mathrm{m}}}\right)^2$。 又有 $\frac{V_{\mathrm{m}} - b}{V_{\mathrm{m}}} \approx 1$，故 $T_{\mathrm{B}} = \frac{a}{Rb}$，气体的特性参数。
+\end{enumerate}
+
+\subsubsection{其他状态方程式}
+
+略
+
+\subsection{气液间的转变——实际气体的等温线和液化过程 20250922}
+
+\subsubsection{气体与液体的等温线}
+
+\begin{enumerate}
+    \item 理想气体无法被液化：分子间无相互作用力。
+    \item 气液两相平衡：饱和蒸气，饱和液体，饱和蒸气压。
+    (1) 饱和蒸气压由物质特性决定，随温度升高而增大。 饱和蒸气压 $=$ 外压，沸腾，沸点。
+    (2) $T$ 一定，饱和蒸气压为 $p_{\mathrm{B}}^*$，若 $p_{\mathrm{B}} < p_{\mathrm{B}}^*$，$B$ 将蒸发为气体；$p_{\mathrm{B}} > p_{\mathrm{B}}^*$，$B$ 将凝结为液体。 此规律不受其他不溶于液体的惰性气体存在的影响。
+    \item 相对湿度 $= \frac{p_{\mathrm{H_2O}}}{p_{\mathrm{H_2O}}^*} \times 100\%$。
+    \item 临界参数
+    (1) 临界温度 $T_{\mathrm{c}}$：在此温度上无论加多大压力，气体均不液化。
+    (2) 临界压力 $p_{\mathrm{c}}$：在临界温度时使气体液化所需要的最小压力。
+    (3) 临界体积 $V_{\mathrm{c}}$：在临界温度、临界压力时的体积。 $\longrightarrow$ 临界摩尔体积。
+    \item $p-V_{\mathrm{m}}$ 等温线
+    (1) $T < T_{\mathrm{c}}$，有气相线 $gg'$，液相线 $ll'$，气液平衡线 $lg$。 $g$：饱和蒸气 $V_{\mathrm{m}}(\mathrm{g})$，$l$：饱和液体 $V_{\mathrm{m}}(\mathrm{l})$，$lg$ 线上气液共存（露点 $g$，泡点 $l$）。
+    (2) $T = T_{\mathrm{c}}$，$lg$ 线变为拐点 $c$（临界点），气液两相 $V_{\mathrm{m}}$ 和其他性质相同，界面消失。 $\left(\frac{\partial p}{\partial V_{\mathrm{m}}}\right)_{T_{\mathrm{c}}} = 0$, $\left(\frac{\partial^2 p}{\partial V_{\mathrm{m}}^2}\right)_{T_{\mathrm{c}}} = 0$。
+    (3) $T > T_{\mathrm{c}}$，均为气态。
+    (4) 虚线内为气液共存区，虚线外为单相区。
+    \item 超临界流体（$T, p$ 略高于临界点）密度大于气体，具有溶解性能，可用于萃取。
+\end{enumerate}
+
+\subsubsection{van der Waals 方程式的等温线}
+
+将 van der Waals 方程式展开得 $V_{\mathrm{m}}^3 - V_{\mathrm{m}}^2 \left(b + \frac{RT}{p}\right) + V_{\mathrm{m}} \frac{a}{p} - \frac{ab}{p} = 0$。
+\begin{enumerate}
+    \item 临界点以上有一实根两虚根；临界点有三相等实根；临界点以下有三个不同实根。
+    \item F点处为过饱和蒸气，不稳定，易凝成液体回到气液平衡态。
+    \item 临界点是极大点、极小点和转折点，有：$\left(\frac{\partial p}{\partial V_{\mathrm{m}}}\right)_{T_{\mathrm{c}}} = 0$, $\left(\frac{\partial^2 p}{\partial V_{\mathrm{m}}^2}\right)_{T_{\mathrm{c}}} = 0$。
+    将 van der Waals 方程写成 $p = \frac{RT}{V_{\mathrm{m}} - b} - \frac{a}{V_{\mathrm{m}}^2}$
+    故 $\left(\frac{\partial p}{\partial V_{\mathrm{m}}}\right)_{T_{\mathrm{c}}} = \frac{-R T_{\mathrm{c}}}{(V_{\mathrm{m,c}} - b)^2} + \frac{2a}{V_{\mathrm{m,c}}^3} = 0 \quad \text{①}$
+    $\left(\frac{\partial^2 p}{\partial V_{\mathrm{m}}^2}\right)_{T_{\mathrm{c}}} = \frac{2R T_{\mathrm{c}}}{(V_{\mathrm{m,c}} - b)^3} - \frac{6a}{V_{\mathrm{m,c}}^4} = 0 \quad \text{②}$
+    由此解得 $V_{\mathrm{m,c}} = 3b$，代入①解得 $T_{\mathrm{c}} = \frac{8a}{27Rb}$。
+    将 $V_{\mathrm{m,c}}$, $T_{\mathrm{c}}$ 代入 van der Waals 方程，得 $p_{\mathrm{c}} = \frac{a}{27b^2}$，$R = \frac{8}{3} \frac{p_{\mathrm{c}} V_{\mathrm{m,c}}}{T_{\mathrm{c}}}$。
+    注：在 $T_{\mathrm{c}}, p_{\mathrm{c}}, V_{\mathrm{m,c}}$ 中，$V_{\mathrm{m,c}}$ 的准确度最差，应由 $T_{\mathrm{c}}$ 和 $p_{\mathrm{c}}$ 计算 $a, b$。 $a = \frac{27}{64} \frac{R^2 T_{\mathrm{c}}^2}{p_{\mathrm{c}}}$, $b = \frac{R T_{\mathrm{c}}}{8 p_{\mathrm{c}}}$。
+    理论上所有气体的均为 $\frac{R T_{\mathrm{c}}}{p_{\mathrm{c}} V_{\mathrm{m,c}}} = \frac83$，实际多数气体都有一定偏差，有些偏差较大。
+\end{enumerate}
+
+\subsubsection{对比状态和对比定律}
+
+\begin{enumerate}
+    \item 将 $a, b, R$ 代入 van der Waals 方程，得 $\left(p + \frac{3 p_{\mathrm{c}} V_{\mathrm{m,c}}^2}{V_{\mathrm{m}}^2}\right) \left(V_{\mathrm{m}} - \frac{V_{\mathrm{m,c}}}{3}\right) = \frac{8}{3} \frac{p_{\mathrm{c}} V_{\mathrm{m,c}}}{T_{\mathrm{c}}} T$。
+    同时除以 $p_{\mathrm{c}} V_{\mathrm{m,c}}$，得 $\left(\frac{p}{p_{\mathrm{c}}} + \frac{3 V_{\mathrm{m,c}}^2}{V_{\mathrm{m}}^2}\right) \left(\frac{V_{\mathrm{m}}}{V_{\mathrm{m,c}}} - \frac{1}{3}\right) = \frac{8}{3} \frac{T}{T_{\mathrm{c}}}$。
+    定义对比压力 $\pi = \frac{p}{p_{\mathrm{c}}}$，对比体积 $\beta = \frac{V_{\mathrm{m}}}{V_{\mathrm{m,c}}}$，对比温度 $\tau = \frac{T}{T_{\mathrm{c}}}$，则 $\left(\pi + \frac{3}{\beta^2}\right) \left(3\beta - 1\right) = 8\tau$。
+    \item 适于 van der Waals 方程的气体满足上式，在相同对比温度和对比压力下有相同对比体积。
+\end{enumerate}
+
+\subsection{压缩因子图——实际气体的有关计算 20250922}
+
+\begin{enumerate}
+    \item 设对任意气体，状态方程式保留理想气体方程形式，引入校正因子 $Z$。
+    \begin{equation}
+        p V_{\mathrm{m}} = ZRT, \quad Z = \frac{p V_{\mathrm{m}}}{RT}
+    \end{equation}
+    \item 理想气体任何情况下，$Z = 1$。
+    非理想气体，$Z > 1$ 表示实测 $p V_{\mathrm{m}}$ 大于理想值，不易压缩；$Z < 1$ 易压缩。 $Z$ 称为压缩因子。
+    \item 双参数普遍化压缩因子图。
+    \item $Z = \frac{p V_{\mathrm{m}}}{RT} = \frac{p_{\mathrm{c}} V_{\mathrm{m,c}}}{R T_{\mathrm{c}}} \frac{\pi \beta}{\tau}$，在对比状态相同时，各气体有相同压缩因子 $Z$。
+\end{enumerate}

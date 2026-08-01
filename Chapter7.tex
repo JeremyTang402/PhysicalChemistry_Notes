@@ -277,20 +277,30 @@ $$\begin{aligned}
 
     \item 无论是定位系统或非定位系统, $U, H, C_V$ 的表示式是一样的，只是在热力学函数 $A, S, G$ 上相差一些常数项。
 \end{enumerate}
-%----------%
+
 \subsubsection{配分函数的分离}
 
 \begin{enumerate}
-    \item 一个分子的能量可以认为是分子整体运动的能量即平动能 ($\varepsilon_{\mathrm{t}}$) 与分子内部运动的能量之和。
-    \item 分子内部运动的能量包括转动能 ($\varepsilon_{\mathrm{r}}$)、振动能 ($\varepsilon_{\mathrm{v}}$)、电子运动的能量 ($\varepsilon_{\mathrm{e}}$) 及核运动的能量 ($\varepsilon_{\mathrm{n}}$)，各能量可看作独立无关。
+    \item 一个分子的能量可以认为是分子整体运动的能量即平动能 $\varepsilon_{\mathrm{t}}$ 与分子内部运动的能量之和。
+    \item 分子内部运动的能量包括转动能 $\varepsilon_{\mathrm{r}}$、振动能 $\varepsilon_{\mathrm{v}}$、电子运动的能量 $\varepsilon_{\mathrm{e}}$ 及核运动的能量 $\varepsilon_{\mathrm{n}}$，各能量可看作独立无关。
     \item 分子处于某能级的总能量等于各种能级之和
-    \item 能级大小次序为
-    \item 各不同能级各有相应的简并度，总的简并度 ($g_i$) 等于各个能级上简并度的乘积。
+    \begin{equation}
+        \begin{aligned}
+            \varepsilon_i &= \varepsilon_{i,\mathrm{t}} + \varepsilon_{i,\text{内}} \\
+            &= \varepsilon_{i,\mathrm{t}} + (\varepsilon_{i,\mathrm{n}} + \varepsilon_{i,\mathrm{e}} + \varepsilon_{i,\mathrm{v}} + \varepsilon_{i,\mathrm{r}}) \\
+        \end{aligned}
+    \end{equation}
+
+    \item 能级大小次序为 $\varepsilon_{i,\mathrm{n}} > \varepsilon_{i,\mathrm{e}} > \varepsilon_{i,\mathrm{v}} > \varepsilon_{i,\mathrm{r}} > \varepsilon_{i,\mathrm{t}}$
+    \item 各不同能级各有相应的简并度，总的简并度 $g_i$ 等于各个能级上简并度的乘积。
     \item 根据配分函数的定义，得
     \begin{equation*}
-        q = \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_\mathrm{B} T}\right)
+        \begin{aligned}
+            q &= \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_\mathrm{B} T}\right) \\
+            &= \sum_{i} g_{i,\mathrm{t}} \cdot g_{i,\mathrm{r}} \cdot g_{i,\mathrm{v}} \cdot g_{i,\mathrm{e}} \cdot g_{i,\mathrm{n}} \exp\left(-\frac{\varepsilon_{i,\mathrm{t}} + \varepsilon_{i,\mathrm{r}} + \varepsilon_{i,\mathrm{v}} + \varepsilon_{i,\mathrm{e}} + \varepsilon_{i,\mathrm{n}}}{k_\mathrm{B} T}\right) \\
+        \end{aligned}
     \end{equation*}
-    从数学上可以证明，几个独立变数乘积之和等于各自求和的乘积。于是，上式可以写作
+    几个独立变数乘积之和等于各自求和的乘积。上式可以写作
     \begin{equation}
         \begin{aligned}
             q = &\left[\sum_{i} g_{i,\mathrm{t}} \exp\left(-\frac{\varepsilon_{i,\mathrm{t}}}{k_\mathrm{B} T}\right)\right] \cdot
@@ -298,18 +308,24 @@ $$\begin{aligned}
             &\left[\sum_{i} g_{i,\mathrm{v}} \exp\left(-\frac{\varepsilon_{i,\mathrm{v}}}{k_\mathrm{B} T}\right)\right] \cdot
             \left[\sum_{i} g_{i,\mathrm{e}} \exp\left(-\frac{\varepsilon_{i,\mathrm{e}}}{k_\mathrm{B} T}\right)\right] \cdot
             \left[\sum_{i} g_{i,\mathrm{n}} \exp\left(-\frac{\varepsilon_{i,\mathrm{n}}}{k_\mathrm{B} T}\right)\right] \\
+            \label{PartitionProd}
         \end{aligned}
     \end{equation}
     如令
     \begin{equation*}
         \begin{aligned}
-            \sum_{i} g_i \exp\left(-\frac{\varepsilon_i}{k_\mathrm{B} T}\right) \quad \text{平动}
+            \sum_{i} g_{i,\mathrm{t}} \exp\left(-\frac{\varepsilon_{i,\mathrm{t}}}{k_\mathrm{B} T}\right) &= q_\mathrm{t} \quad \text{平动配分函数} \\
+            \sum_{i} g_{i,\mathrm{r}} \exp\left(-\frac{\varepsilon_{i,\mathrm{r}}}{k_\mathrm{B} T}\right) &= q_\mathrm{r} \quad \text{转动配分函数} \\
+            \sum_{i} g_{i,\mathrm{v}} \exp\left(-\frac{\varepsilon_{i,\mathrm{v}}}{k_\mathrm{B} T}\right) &= q_\mathrm{v} \quad \text{振动配分函数} \\
+            \sum_{i} g_{i,\mathrm{e}} \exp\left(-\frac{\varepsilon_{i,\mathrm{e}}}{k_\mathrm{B} T}\right) &= q_\mathrm{e} \quad \text{电子配分函数} \\
+            \sum_{i} g_{i,\mathrm{n}} \exp\left(-\frac{\varepsilon_{i,\mathrm{n}}}{k_\mathrm{B} T}\right) &= q_\mathrm{n} \quad \text{原子核配分函数} \\
         \end{aligned}
     \end{equation*}
+    则式 \eqref{PartitionProd} 可写作
     \begin{equation}
         q = q_{\mathrm{t}} \cdot q_{\mathrm{r}} \cdot q_{\mathrm{v}} \cdot q_{\mathrm{e}} \cdot q_{\mathrm{n}}
     \end{equation}
-    配分函数可分离性
+    表示配分函数具有可分离性。
 \end{enumerate}
 
 \subsection{各配分函数的求法及其对热力学函数的贡献 20260427 20260429}
@@ -320,23 +336,31 @@ $$\begin{aligned}
     \item 
     \begin{equation*}
         \begin{aligned}
-            q_{\mathrm{n}} &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right)... \\
-            &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right) \\
+            q_{\mathrm{n}} &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right) +  g_{\mathrm{n},1} \exp\left(-\frac{\varepsilon_{\mathrm{n},1}}{k_\mathrm{B} T}\right) + \cdots\\
+            &= g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right) \left[1 + \frac{g_{\mathrm{n},1}}{g_{\mathrm{n},0}} \exp\left(-\frac{\varepsilon_{\mathrm{n},1} - \varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right) + \cdots\right] \\
         \end{aligned}
     \end{equation*}
-    由于原子核的能级间隔相差很大，所以在通常情况下，上式中的第二项及以后的项都可以忽略不计，即
+
+    原子核能级间隔相差很大，通常情况下，上式中的第二项及后项都可以忽略不计，即
     \begin{equation}
         q_{\mathrm{n}} = g_{\mathrm{n},0} \exp\left(-\frac{\varepsilon_{\mathrm{n},0}}{k_\mathrm{B} T}\right)
     \end{equation}
-     核基态的能量选作零，则上式又可写作
+
+    核基态的能量选作零，则上式又可写作
     \begin{equation}
         q_{\mathrm{n}} = g_{\mathrm{n},0} = 2s_{\mathrm{n}} + 1
     \end{equation}
-    式中 $s_{\mathrm{n}}$ 为核自旋量子数。
-    \item 对于多原子分子，核的总配分函数等于各原子的核配分函数的乘积（不是加和），即
-    \item 由于核自旋配分函数与温度、体积无关，所以对热力学能、焓和热容没有贡献，但在熵、 Helmholtz 自由能、 Gibbs 自由能中有相应的贡献。
-\end{enumerate}
+    即原子核的配分函数等于基态的简并度。式中 $s_{\mathrm{n}}$ 为核自旋量子数。
 
+    \item 对于多原子分子，核的总配分函数等于各原子的核配分函数的乘积（不是加和），即
+    \begin{equation}
+        q_{\mathrm{n},\text{总}} = (2s_{\mathrm{n}} + 1)(2s'_{\mathrm{n}} + 1)(2s''_{\mathrm{n}} + 1) \cdots = \prod_{i} (2s_{\mathrm{n}} + 1)_i
+    \end{equation}
+
+    \item 核自旋配分函数与温度、体积无关，对热力学能、焓和热容没有贡献，在熵、Helmholtz 自由能、 Gibbs 自由能中有贡献。
+    \item 从化学反应的角度看，一般忽略核自旋配分函数的贡献，仅在计算规定熵时会计算它的贡献。
+\end{enumerate}
+%----------%
 \subsubsection{电子配分函数}
 
 \begin{enumerate}
@@ -346,7 +370,7 @@ $$\begin{aligned}
         q_{\mathrm{e}} = g_{\mathrm{e},0} = 2j + 1
     \end{equation*}
     式中 $j$ 为量子数。
-    \item 由于电子配分函数与温度、体积无关，所以对热力学能、焓和热容没有贡献，但在熵、 Helmholtz 自由能、 Gibbs 自由能中有相应的贡献。
+    \item 由于电子配分函数与温度、体积无关，所以对热力学能、焓和热容没有贡献，但在熵、Helmholtz 自由能、Gibbs 自由能中有相应的贡献。
 \end{enumerate}
 
 \subsubsection{平动配分函数}
